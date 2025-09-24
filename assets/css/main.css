@@ -6,6 +6,13 @@ body {
   font-family: 'Fredoka One', cursive, sans-serif;
 }
 
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: rgb(252 130 151) !important;
+}
+.navbar{
+  background-color: palevioletred;
+}
 /* Cabecera con efecto pizarra */
 .school-header {
   background: pink;

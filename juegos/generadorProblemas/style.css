@@ -11,7 +11,7 @@ body {
 
 /* Transparencia del contenedor */
 .container {
-  background-color: rgba(255,255,255,0);
+  background-color: rgba(207, 3, 207, 0.993) !important;
 }
 
 /* Estilo de cards con degradados */
