@@ -1,0 +1,58 @@
+/* Fondo con temática escolar */
+body {
+  background: url("assets/img/fondo_whiteboard.png")
+              no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Fredoka One', cursive, sans-serif;
+}
+
+/* Cabecera con efecto pizarra */
+.school-header {
+  background: pink;
+  backdrop-filter: blur(3px);
+  border-bottom: 5px dashed #fff;
+  border-top: 5px dashed #fff;
+  
+}
+
+/* Tarjetas de los juegos */
+.game-card {
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.game-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* Imágenes de las cards */
+.game-card img {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 4px solid #ffffff;
+}
+
+/* Botones con bordes redondeados */
+.btn {
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.genially-section h2 {
+  font-family: 'Fredoka One', cursive;
+  text-shadow: 2px 2px #fff;
+}
+
+.genially-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.genially-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
