@@ -15,12 +15,12 @@ body {
 }
 /* Cabecera con efecto pizarra */
 .school-header {
-  background: pink;
-  backdrop-filter: blur(3px);
-  border-bottom: 5px dashed #fff;
-  border-top: 5px dashed #fff;
-  
+  background: url('../img/fondoCabecera.png') center center / cover no-repeat;
+  position: relative;
+  color: rgb(123, 189, 250) !important;
 }
+
+
 
 /* Tarjetas de los juegos */
 .game-card {
@@ -62,4 +62,34 @@ body {
   transform: translateY(-6px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
+/* Imágenes de la Zona Genially con tamaño uniforme */
+.genially-card img {
+  width: 100%;          /* que ocupen todo el ancho de la card */
+  height: 200px;        /* altura fija para todas */
+  object-fit: cover;    /* recorta la imagen para mantener proporción */
+  border-bottom: 4px solid #ffffff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
 
+html {
+  scroll-behavior: smooth;
+}
+
+.resource-card img {
+  width: 100%;
+  height: 200px;        /* altura uniforme */
+  object-fit: cover;    /* recorta para mantener proporción */
+  border-bottom: 4px solid #ffffff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.resource-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.resource-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
