@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "roma";
+  src: url(roman.ttf);
+}
+
+body {
+  background: #f2e8d5 url('../../assets/img/fondo_roma.png') center/cover;
+  font-family: 'roma';
+  text-align: center;
+  padding: 20px;
+  color: #4b2e0e;
+}
+
+h1 {
+  font-family:'roma', serif;
+  font-size: 3em;
+  color: #8b0000;
+  text-shadow: 2px 2px #d4af37;
+  margin-bottom: 20px;
+}
+
+.bingo-card {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* más ancho, menos alto */
+  gap: 10px;
+  max-width: 900px;
+  margin: 0 auto 10px;
+}
+
+/* Celdas que se irán añadiendo */
+.cell {
+  background: rgba(255,255,255,0.9);
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 1.4em;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0.2);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.cell.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+button {
+  background: #8b0000;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px #5c0000;
+  transition: 0.2s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #a00000;
+}
+
+#called-number {
+  font-size: 1.6em;
+  margin-top: 15px;
+  color: #5c0000;
+  text-shadow: 1px 1px #d4af37;
+}
+
+/* ---- Bola ---- */
+#ball-container {
+  position: relative;
+  height: 220px;
+  margin: 30px auto 20px;
+}
+
+.ball {
+  width: 140px;
+  height: 140px;
+  margin: auto;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #cecdcd);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(126, 27, 27);
+  font-size: 2.5em;
+  font-weight: bold;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6), 0 0 40px #d4af37 inset;
+  opacity: 0;
+  transform: scale(0.2) rotate(0deg);
+  transition: opacity 0.4s ease;
+}
+
+/* bola visible */
+.ball.show {
+  opacity: 1;
+  animation: popBounce 0.9s ease forwards,
+             flashGlow 1.2s ease infinite alternate;
+}
+#bingo-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7); /* oscurece el fondo */
+  display: none; /* oculto por defecto */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#bingo-content {
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+#bingo-content h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  text-shadow: 2px 2px 10px #000;
+}
+
+/* ---- Animaciones ---- */
+@keyframes popBounce {
+  0%   { transform: scale(0.2) rotate(0deg); }
+  40%  { transform: scale(1.4) rotate(180deg); }
+  70%  { transform: scale(0.8) rotate(270deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+@keyframes flashGlow {
+  from { box-shadow: 0 0 20px #ffffff, 0 0 40px #bbbbbb inset; }
+  to   { box-shadow: 0 0 60px #f0f0f0, 0 0 80px #c4c3c3 inset; }
+}
