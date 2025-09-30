@@ -93,3 +93,32 @@ html {
   transform: translateY(-6px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
+/* Cabecera con fondo */
+.school-header {
+  position: relative;
+  background: url('../img/fondoCabecera.png') center/cover no-repeat;
+  min-height: 250px;  /* asegura espacio suficiente */
+  display: flex;
+  align-items: center; /* centra verticalmente el contenido */
+  justify-content: center; /* centra horizontalmente el container */
+}
+
+/* Imagen del personaje */
+.header-character {
+  position: absolute;
+  left: 20px;          /* distancia desde el borde izquierdo */
+  bottom: 0;           /* pegada al borde inferior */
+  height: 100%;        /* ocupa toda la altura del header */
+  max-height: 250px;   /* limita el tamaño */
+  z-index: 2;          /* sobre el fondo, pero no sobre el texto */
+}
+
+/* Versión responsive: ocultar o reducir personaje en pantallas pequeñas */
+@media (max-width: 768px) {
+  .header-character {
+    height: 60%;
+    left: 5px;
+    max-height: 150px;
+  
+  }
+}

@@ -11,6 +11,7 @@
 
   <!-- Google Fonts para un estilo más divertido -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fredoka+One&display=swap" rel="stylesheet">
+       <link rel="icon" href="assets/img/elvire.jpg" type="image/x-icon">
 </head>
 <body>
 
@@ -50,12 +51,24 @@
   </nav>
 
   <!-- Cabecera -->
-  <header class="school-header text-center text-white py-5">
-    <div class="container">
+ <header class="school-header text-center text-white py-5 position-relative">
+  <!-- Imagen del personaje -->
+  <img src="assets/img/irene.png" alt="Personaje Disney" class="header-character">
+
+  <div class="container">
+    <!-- Texto solo visible en móviles -->
+    <h1 class="display-4 fw-bold d-block d-md-none">¡Aprende y juega!</h1>
+     <p class="lead">  </p>
+
+    <!-- Texto visible en pantallas medianas o más grandes -->
+    <div class="d-none d-md-block">
       <h1 class="display-4 fw-bold">¡Aprende y juega!</h1>
       <p class="lead">Elige uno de los juegos educativos y diviértete mientras aprendes</p>
     </div>
-  </header>
+  </div>
+</header>
+
+
 
   <!-- Zona Genially -->
   <section id="genially" class="genially-section my-5">
@@ -145,7 +158,7 @@
           <div class="card-body text-center">
             <h5 class="card-title text-warning fw-bold">Bingo Romano</h5>
             <p class="card-text">Juega al bingo en la Antigua Roma</p>
-            <a href="juegos/bingoRomano/index.html" class="btn btn-secondary w-100">Jugar</a>
+            <a href="juegos/bingoRomano/index.html" class="btn btn-secondary w-100" style="background-color:#660707; color: white; border:none;">Jugar</a>
           </div>
         </div>
       </div>
