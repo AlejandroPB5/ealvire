@@ -113,6 +113,19 @@ html {
   z-index: 2;          /* sobre el fondo, pero no sobre el texto */
 }
 
+.red-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #fff;
+    min-width: 180px;      /* ancho mínimo para que se vean iguales */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
 /* Versión responsive: ocultar o reducir personaje en pantallas pequeñas */
 @media (max-width: 768px) {
   .header-character {
