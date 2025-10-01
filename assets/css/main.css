@@ -53,7 +53,7 @@ body {
 }
 
 .genially-card {
-  background: rgba(255,255,255,0.9);
+  background: rgb(217, 243, 252);
   border-radius: 20px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -126,6 +126,12 @@ html {
     min-width: 180px;      /* ancho mínimo para que se vean iguales */
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+
+.mi-fondo-rosa {
+  background-color: #eec9da; /* Puedes cambiar este código hexadecimal por el color que prefieras */
+}
+
 /* Versión responsive: ocultar o reducir personaje en pantallas pequeñas */
 @media (max-width: 768px) {
   .header-character {
