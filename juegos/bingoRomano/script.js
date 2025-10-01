@@ -1,7 +1,9 @@
 const numbers = [
     "XXI", "XL", "LI", "DL", "DXXXIV",
     "XIV", "CXIII", "M", "CCI", "CCXXVII",
-    "IX", "IL", "XC", "D", "VI", "LX", "LXX"
+    "IX", "IL", "XC", "D", "VI", "LX", "LXX",
+    "CDXXXV","MMDCCII","CCIV","MDCCCLXI","MMMLXXIV",
+    "XXXIV","XVIII","XLIX"
 ];
 
 const card = document.getElementById('bingo-card');
