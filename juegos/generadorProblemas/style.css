@@ -1,61 +1,53 @@
-
-
-/* Fondo general */
-body {
-  background: url("https://i.pinimg.com/1200x/a1/99/89/a19989a372ed5593c44c09b8241d00f8.jpg")
-              no-repeat center center fixed;
+/* Fondo general con pizarra */
+/* body {
+  background: url("../../assets/img/fondo-pizarra-blanca.png") no-repeat center center fixed;
   background-size: cover;
-  min-height: 100vh;
-  font-family: "Comic Sans MS","Poppins",sans-serif;
-}
+  font-family: 'Comic Neue', 'Fredoka One', cursive, sans-serif;
+} */
 
-/* Transparencia del contenedor */
-.container {
-  background-color: rgba(207, 3, 207, 0.993) !important;
-}
-
-/* Estilo de cards con degradados */
+/* Cards */
 .gradient-card {
   border-radius: 18px;
   backdrop-filter: blur(4px);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-.card.border-primary.gradient-card {
-  background: linear-gradient(135deg, #a8e6ff 0%, #d4f1ff 100%);
-}
-.card.border-success.gradient-card {
-  background: linear-gradient(135deg, #d4fce3 0%, #c7f9d9 100%);
-}
-.card.border-danger.gradient-card {
-  background: linear-gradient(135deg, #ffd6e0 0%, #f6d0ff 100%);
-}
-.card.border-warning.gradient-card {
-  background: linear-gradient(135deg, #fff1c6 0%, #ffe1a8 100%);
-}
-
-.card:hover.gradient-card {
+.gradient-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 36px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
+/* Personajes */
 .personaje-img {
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;
   background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
-/* Espacios de revelación */
+/* Caja de revelación */
 .reveal-box {
   font-size: 1.2rem;
   padding: 10px 14px;
   margin: 8px auto;
   max-width: 90%;
   border-radius: 12px;
-  background: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.9);
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-.d-none { display: none !important; }
-.d-block { display: block !important; }
+/* Cabecera */
+.school-header {
+  background: linear-gradient(135deg, #3f87f5 0%, #1d62b3 100%);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+h1{
+  color: white !important;
+}
+.lead {
+  color: pink;
+}
