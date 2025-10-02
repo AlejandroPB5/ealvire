@@ -1,0 +1,40 @@
+body {
+  background-color: #f7f9fc;
+}
+
+.number-box {
+  font-family: 'Fredoka One', cursive;
+  font-size: 4rem;
+  color: #2c3e50;
+  margin-top: 20px;
+ 
+}
+
+
+.wizard {
+  width: 300px;   /* fuerza el mismo tamaño */
+  height: auto;   /* mantiene proporciones */
+  max-width: 100%; /* responsivo */
+}
+
+
+.btn-magic {
+  background-color: #c52323;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-magic:hover {
+  transform: scale(1.1);
+  background-color: #4784f5;
+  color: white;
+}
+
+/* En móviles ocultamos el subtítulo */
+@media (max-width: 768px) {
+  .header-subtitle {
+    display: none;
+  }
+}

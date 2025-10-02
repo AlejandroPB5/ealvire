@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Números | Recursos By Elvire</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fredoka+One&display=swap" rel="stylesheet">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+
+  <!-- ✅ Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fs-3 fw-bold" href="../../index.html">📚 Recursos By Ealvire</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#genially">Zona Genially</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#juegos">Zona Juegos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="recursos.html">Recursos Educativos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cabecera -->
+  <header class="school-header text-center text-white py-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold">✨ Generador de Números ✨</h1>
+      <p class="lead">Haz clic y deja que el mago te muestre un número aleatorio</p>
+    </div>
+  </header>
+
+<main class="container text-center py-5">
+  <div class="row align-items-center">
+    
+    <!-- Número generado (izquierda) -->
+    <div class="col-md-6">
+      <div id="number" class="number-box fw-bold"></div>
+
+      <!-- Botones debajo del número -->
+      <div class="d-flex justify-content-center gap-3 mt-4">
+        <button class="btn btn-magic px-4" onclick="generateNumber(5)">Número de 5 cifras</button>
+        <button class="btn btn-magic px-4" onclick="generateNumber(6)">Número de 6 cifras</button>
+      </div>
+    </div>
+
+    <!-- Imagen del mago (derecha, siempre visible) -->
+    <div class="col-md-6">
+      <img src="../../assets/img/mago.gif" alt="Mago" class="wizard">
+    </div>
+
+  </div>
+</main>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-3">
+    &copy; 2025 Recursos By Elvire
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
