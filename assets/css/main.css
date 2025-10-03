@@ -1,7 +1,5 @@
 /* Fondo con temática escolar */
 body {
-  background: url("assets/img/fondo_whiteboard.png")
-              no-repeat center center fixed;
   background-size: cover;
   font-family: 'Fredoka One', cursive, sans-serif;
 }
