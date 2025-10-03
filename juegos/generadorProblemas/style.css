@@ -3,7 +3,9 @@
   src: url('child.ttf');
 }
 main {
-  
+  background: url("../../assets/img/fondoMath.png")
+              no-repeat center center fixed;
+  background-size: cover;
   font-family: 'Child';	
 }
 
