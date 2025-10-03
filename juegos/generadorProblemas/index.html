@@ -48,7 +48,7 @@
       </div>
     </div>
   </nav>
-
+<main>
   <!-- Cabecera -->
   <header class="school-header text-center text-white py-5">
     <div class="container">
@@ -62,32 +62,33 @@
     <div class="row g-4 mb-4">
 
       <!-- Personaje 1 -->
-      <div class="col-12 col-sm-6 col-md-4">
-        <div class="card gradient-card border-primary text-center shadow h-100">
-          <div class="card-body">
-            <h5 class="card-title text-primary fw-bold">Personaje 1</h5>
-            <img id="personajeImg"
-                 src="https://upload.wikimedia.org/wikipedia/commons/5/55/Question_Mark.svg"
-                 alt="Personaje por defecto"
-                 class="img-fluid rounded mb-3 personaje-img border border-3 border-warning">
-            <button class="btn btn-primary w-100" onclick="sortearPersonaje('personajeImg', false)">🎭 Sortear</button>
-          </div>
-        </div>
-      </div>
+<div class="col-12 col-sm-6 col-md-4">
+  <div class="card gradient-card border-primary text-center shadow h-100">
+    <div class="card-body">
+      <h5 class="card-title text-primary fw-bold">Héroe</h5>
+      <img id="personajeImg"
+           src="https://upload.wikimedia.org/wikipedia/commons/5/55/Question_Mark.svg"
+           alt="Héroe por defecto"
+           class="img-fluid rounded mb-3 personaje-img border border-3 border-warning">
+      <button class="btn btn-primary w-100" onclick="sortearPersonaje('personajeImg', false)">🎭 Sortear</button>
+    </div>
+  </div>
+</div>
 
-      <!-- Personaje 2 -->
-      <div class="col-12 col-sm-6 col-md-4">
-        <div class="card gradient-card border-primary text-center shadow h-100">
-          <div class="card-body">
-            <h5 class="card-title text-primary fw-bold">Personaje 2</h5>
-            <img id="personajeImg2"
-                 src="https://upload.wikimedia.org/wikipedia/commons/5/55/Question_Mark.svg"
-                 alt="Personaje por defecto"
-                 class="img-fluid rounded mb-3 personaje-img border border-3 border-warning">
-            <button class="btn btn-primary w-100" onclick="sortearPersonaje('personajeImg2', true)">🎭 Sortear</button>
-          </div>
-        </div>
-      </div>
+<!-- Personaje 2 -->
+<div class="col-12 col-sm-6 col-md-4">
+  <div class="card gradient-card border-primary text-center shadow h-100">
+    <div class="card-body">
+      <h5 class="card-title text-primary fw-bold">Villano</h5>
+      <img id="personajeImg2"
+           src="https://upload.wikimedia.org/wikipedia/commons/5/55/Question_Mark.svg"
+           alt="Villano por defecto"
+           class="img-fluid rounded mb-3 personaje-img border border-3 border-warning">
+      <button class="btn btn-primary w-100" onclick="sortearPersonaje('personajeImg2', true)">🎭 Sortear</button>
+    </div>
+  </div>
+</div>
+
 
       <!-- Acción -->
       <div class="col-12 col-sm-6 col-md-4">
@@ -162,10 +163,11 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-primary text-white text-center py-3">
+ 
+</main>
+ <footer class="bg-primary text-white text-center py-3">
     &copy; 2025 Recursos By Elvire
   </footer>
-
   <!-- Scripts -->
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

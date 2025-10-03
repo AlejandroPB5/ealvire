@@ -1,9 +1,11 @@
-/* Fondo general con pizarra */
-/* body {
-  background: url("../../assets/img/fondo-pizarra-blanca.png") no-repeat center center fixed;
-  background-size: cover;
-  font-family: 'Comic Neue', 'Fredoka One', cursive, sans-serif;
-} */
+@font-face {
+  font-family: 'Child';
+  src: url('Child.ttf');
+}
+main {
+  
+  font-family: 'Child';	
+}
 
 /* Cards */
 .gradient-card {
