@@ -79,11 +79,28 @@ button {
   cursor: pointer;
   box-shadow: 0 4px #5c0000;
   transition: 0.2s;
+  margin-top: 10px; }
+
+.bingo-btn {
+  background: #06b31d;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px #000000;
+  transition: 0.2s;
   margin-top: 10px;
+  font-weight: bold;
 }
 
 button:hover {
   background: #a00000;
+}
+.bingo-btn:hover {
+  background: #a00000;
+  color: #c57701;
 }
 
 #called-number {
