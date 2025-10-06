@@ -5,12 +5,14 @@ body {
 }
 
 .bg-primary {
-    --bs-bg-opacity: 1;
-    background-color: rgb(252 130 151) !important;
+  --bs-bg-opacity: 1;
+  background-color: rgb(252 130 151) !important;
 }
-.navbar{
+
+.navbar {
   background-color: palevioletred;
 }
+
 /* Cabecera con efecto pizarra */
 .school-header {
   background: url('../img/fondoCabecera.png') center center / cover no-repeat;
@@ -27,9 +29,10 @@ body {
   background: rgba(255, 255, 255, 0.9);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .game-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Imágenes de las cards */
@@ -54,17 +57,39 @@ body {
   background: rgb(217, 243, 252);
   border-radius: 20px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+.game-card{
+  display: flex;
+  flex-direction: column;
+}
+.genially-card .card-body {
+  flex: 1; /* hace que el contenido se expanda */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* separa el texto y el botón */
+}
+.game-card .card-body {
+  flex: 1; /* hace que el contenido se expanda */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* separa el texto y el botón */
 }
 
 .genially-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
+
 /* Imágenes de la Zona Genially con tamaño uniforme */
 .genially-card img {
-  width: 100%;          /* que ocupen todo el ancho de la card */
-  height: 200px;        /* altura fija para todas */
-  object-fit: cover;    /* recorta la imagen para mantener proporción */
+  width: 100%;
+  /* que ocupen todo el ancho de la card */
+  height: 200px;
+  /* altura fija para todas */
+  object-fit: cover;
+  /* recorta la imagen para mantener proporción */
   border-bottom: 4px solid #ffffff;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -76,65 +101,92 @@ html {
 
 .resource-card img {
   width: 100%;
-  height: 200px;        /* altura uniforme */
-  object-fit: cover;    /* recorta para mantener proporción */
+  height: 200px;
+  /* altura uniforme */
+  object-fit: cover;
+  /* recorta para mantener proporción */
   border-bottom: 4px solid #ffffff;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+
 .resource-card {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
+.resource-card .card-body {
+  flex: 1; /* hace que el contenido se expanda */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* separa el texto y el botón */
+}
+
 .resource-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
+
 /* Cabecera con fondo */
 .school-header {
   position: relative;
   background: url('../img/fondoCabecera.png') center/cover no-repeat;
-  min-height: 250px;  /* asegura espacio suficiente */
+  min-height: 250px;
+  /* asegura espacio suficiente */
   display: flex;
-  align-items: center; /* centra verticalmente el contenido */
-  justify-content: center; /* centra horizontalmente el container */
+  align-items: center;
+  /* centra verticalmente el contenido */
+  justify-content: center;
+  /* centra horizontalmente el container */
 }
 
 /* Imagen del personaje */
 .header-character {
   position: absolute;
-  left: 20px;          /* distancia desde el borde izquierdo */
-  bottom: 0;           /* pegada al borde inferior */
-  height: 100%;        /* ocupa toda la altura del header */
-  max-height: 250px;   /* limita el tamaño */
-  z-index: 2;          /* sobre el fondo, pero no sobre el texto */
+  left: 20px;
+  /* distancia desde el borde izquierdo */
+  bottom: 0;
+  /* pegada al borde inferior */
+  height: 100%;
+  /* ocupa toda la altura del header */
+  max-height: 250px;
+  /* limita el tamaño */
+  z-index: 2;
+  /* sobre el fondo, pero no sobre el texto */
 }
 
 .red-social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    color: #fff;
-    min-width: 180px;      /* ancho mínimo para que se vean iguales */
-    transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #fff;
+  min-width: 180px;
+  /* ancho mínimo para que se vean iguales */
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 
 .mi-fondo-rosa {
-  background-color: #eec9da; /* Puedes cambiar este código hexadecimal por el color que prefieras */
+  background-color: #eec9da;
+  /* Puedes cambiar este código hexadecimal por el color que prefieras */
 }
 
 .mago-img {
-  width: 80%;             /* ajusta el tamaño (prueba 60–80%) */
-  margin: 0 auto;         /* centra la imagen horizontalmente */
-  display: block;         /* necesario para centrar correctamente */
-  border-radius: 16px;    /* opcional, para mantener estilo suave */
+  width: 80%;
+  /* ajusta el tamaño (prueba 60–80%) */
+  margin: 0 auto;
+  /* centra la imagen horizontalmente */
+  display: block;
+  /* necesario para centrar correctamente */
+  border-radius: 16px;
+  /* opcional, para mantener estilo suave */
 }
 
 /* Versión responsive: ocultar o reducir personaje en pantallas pequeñas */
@@ -143,6 +195,6 @@ html {
     height: 60%;
     left: 5px;
     max-height: 150px;
-  
+
   }
 }
