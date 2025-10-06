@@ -4,7 +4,7 @@
 }
 
 body {
-  background: #f2e8d5 url('../../assets/img/fondo_roma.png') center/cover;
+  background: #f2e8d5 url('../../assets/img/bingus.png') center/cover;
   font-family: 'roma';
   text-align: center;
   padding: 20px;
@@ -13,11 +13,35 @@ body {
 
 h1 {
   font-family:'roma', serif;
-  font-size: 3em;
+  font-size: 4rem;
   color: #8b0000;
   text-shadow: 2px 2px #d4af37;
   margin-bottom: 20px;
+  background: rgba(255,255,255,0.8);
+  padding: 10px 20px;
+  border-radius: 12px;
+  display: inline-flex;        /* ✅ para alinear texto e íconos horizontalmente */
+  align-items: center;         /* centra verticalmente íconos y texto */
+  gap: 15px;                   /* espacio entre ícono y texto */
 }
+
+.icono-svg {
+  width: 40px;                 /* ajusta tamaño según te guste */
+  height: 40px;
+}
+
+.bingo-container {
+  display: flex;
+  flex-direction: column;   /* todo en columna */
+  align-items: center;      /* centrado horizontal */
+  justify-content: center;  /* centrado vertical */
+  gap: 20px;                /* separación entre elementos */
+  min-height: 70vh;         /* ocupa 70% de la pantalla vertical */
+  margin-top: 50px;         /* puedes ajustar este margen si lo quieres más abajo */
+  text-align: center;
+}
+
+
 
 .bingo-card {
   display: grid;
@@ -65,8 +89,12 @@ button:hover {
 #called-number {
   font-size: 1.6em;
   margin-top: 15px;
-  color: #5c0000;
-  text-shadow: 1px 1px #d4af37;
+  font-weight: bold;
+  color: #020202;
+  background: rgba(255,255,255,0.8);
+  padding: 10px 20px;
+  border-radius: 12px;
+   display: inline-block;
 }
 
 /* ---- Bola ---- */

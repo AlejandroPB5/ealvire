@@ -130,6 +130,13 @@ html {
   background-color: #eec9da; /* Puedes cambiar este código hexadecimal por el color que prefieras */
 }
 
+.mago-img {
+  width: 80%;             /* ajusta el tamaño (prueba 60–80%) */
+  margin: 0 auto;         /* centra la imagen horizontalmente */
+  display: block;         /* necesario para centrar correctamente */
+  border-radius: 16px;    /* opcional, para mantener estilo suave */
+}
+
 /* Versión responsive: ocultar o reducir personaje en pantallas pequeñas */
 @media (max-width: 768px) {
   .header-character {

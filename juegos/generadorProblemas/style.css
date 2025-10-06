@@ -24,10 +24,13 @@ main * {
   color: yellow !important;
 }
 
+#objeto, #objeto2 {
+  text-transform: capitalize;
+}
 
 main .card-body p,
 main .card-body span {
-  font-size: 2rem !important;
+  font-size: 3rem !important;
 }
 /* Cards */
 .gradient-card {
@@ -58,7 +61,7 @@ main .card-body span {
   margin: 8px auto;
   max-width: 90%;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgb(255, 255, 255);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
