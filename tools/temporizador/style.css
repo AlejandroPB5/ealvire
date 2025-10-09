@@ -1,0 +1,159 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin: 0;
+    /* height: 100vh; */  /* quitar */
+    overflow: auto;       /* permitir scroll */
+}
+
+
+.timer-container {
+    background: rgb(123, 189, 250);
+    border-radius: 30px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+    font-size: 2em;
+}
+
+h1 {
+    /* color: #ff6f61; */
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #ffcc00;
+    width: 100px;
+    text-align: center;
+}
+
+.circle-container {
+    position: relative;
+    width: 50vw; 
+    height: 50vw;
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* centra el SVG */
+     gap: 2rem;       /* separación entre círculo y GIF */
+    flex-wrap: wrap;  /* para móviles, el GIF baja debajo del círculo */
+}
+.circle-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.gif-wrapper img {
+    border-radius: 15px;
+    object-fit: cover;
+}
+.circle-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform: rotate(-90deg);
+}
+.circle-svg circle {
+    cx: 50%;
+    cy: 50%;
+    r: 45%;
+}
+
+
+
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 15;
+}
+
+.circle-progress {
+    fill: none;
+    stroke: #ffcc00;
+    stroke-width: 15;
+    stroke-linecap: round;
+    stroke-dasharray: 565.48; /* 2 * π * 90 */
+    stroke-dashoffset: 565.48;
+    transition: stroke 0.5s;
+}
+
+#timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px #000000;
+    transition: transform 0.3s;
+}
+
+#timer.ticking {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#startBtn {
+    background-color: #ff6f61;
+    color: white;
+}
+
+#resetBtn {
+    background-color: #ffd166;
+    color: white;
+}
+#pauseBtn {
+    background-color: #6a4c93;
+    color: white;
+}
+
+
+canvas#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
