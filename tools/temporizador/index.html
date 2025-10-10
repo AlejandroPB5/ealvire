@@ -71,13 +71,14 @@
                 <input type="number" id="secondsInput" placeholder="Seg" min="0" max="59">
             </div>
             <div class="circle-container">
-                <svg class="circle-svg" width="200" height="200">
-                    <circle class="circle-bg" cx="100" cy="100" r="90" />
-                    <circle class="circle-progress" cx="100" cy="100" r="90" />
+                <svg class="circle-svg" width="200" height="200" viewBox="0 0 200 200"
+                    preserveAspectRatio="xMidYMid meet">
+                    <circle class="circle-bg" cx="100" cy="100" r="80" />
+                    <circle class="circle-progress" cx="100" cy="100" r="80" />
                 </svg>
                 <div id="timer" class="timer-text">00:00</div>
-                
             </div>
+
             <button id="startBtn">Comenzar/Reanudar</button>
             <button id="pauseBtn">Pausar</button>
             <button id="resetBtn">Reiniciar</button>
