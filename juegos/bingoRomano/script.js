@@ -3,8 +3,20 @@ const numbers = [
     "XIV", "CXIII", "M", "CCI", "CCXXVII",
     "IX", "XLIX", "XC", "D", "VI", "LX", "LXX",
     "CDXXXV","MMDCCII","CCIV","MDCCCLXI","MMMLXXIV",
-    "XXXIV","XVIII","XLIX"
+    "XXXIV","XVIII","XLIX",
+    // 10 nuevos números romanos
+    "XCVII",    // 97
+    "CDXC",     // 490
+    "DCXXI",    // 621
+    "DCCCXC",   // 890
+    "MCMXCIX",  // 1999
+    "MMXXV",    // 2025
+    "LXXXVIII", // 88
+    "CXXIV",    // 124
+    "CCCXXXIII",// 333
+    "CM"        // 900
 ];
+
 
 const card = document.getElementById('bingo-card');
 const drawBtn = document.getElementById('draw-btn');
