@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bingo Romano</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bingo Romano</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <h1>
-  <img src="../../assets/img/icono_roma.svg" alt="Icono" class="icono-svg">
-  Bingo Romano
-  <img src="../../assets/img/icono_roma.svg" alt="Icono" class="icono-svg">
-</h1>
+    <img src="../../assets/img/icono_roma.svg" alt="Icono" class="icono-svg">
+    Bingo Romano
+    <img src="../../assets/img/icono_roma.svg" alt="Icono" class="icono-svg">
+  </h1>
 
-
-<div class="bingo-container">
-  <div class="bingo-card" id="bingo-card"></div>
-
-  <button id="draw-btn">Sacar número</button>
-
-  <!-- Contenedor para la bola animada -->
-  <div id="ball-container">
-    <div class="ball" id="ball">?</div>
+  <!-- 🧾 Sección de descarga -->
+  <div class="descarga-cupones">
+    
+    <a href="../../assets/docs/cartones_versionIguales.pdf" download class="btn-descargar">
+      ⬇️ Descargar cartones (Todos con los mismos números)
+    </a>
+    <a href="../../assets/docs/cartones_versionDiferentes.pdf" download class="btn-descargar2">
+      ⬇️ Descargar cartones (Cada cartón con números diferentes)
+    </a>
   </div>
 
-  <div id="called-number">¡Que empiece el juego!</div>
+  <div class="bingo-container">
+    <div class="bingo-card" id="bingo-card"></div>
 
-  <br>
+    <button id="draw-btn">Sacar número</button>
 
-  <!-- Botón de Bingo -->
-  <button id="bingo-btn" class="bingo-btn">¡Bingo!</button>
-</div>
+    <!-- Contenedor para la bola animada -->
+    <div id="ball-container">
+      <div class="ball" id="ball">?</div>
+    </div>
+
+    <div id="called-number">¡Que empiece el juego!</div>
+
+    <br>
+
+    <!-- Botón de Bingo -->
+    <button id="bingo-btn" class="bingo-btn">¡Bingo!</button>
+  </div>
 
 
   <!-- Overlay de Bingo -->
@@ -41,6 +53,7 @@
     </div>
   </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

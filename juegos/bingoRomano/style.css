@@ -173,6 +173,44 @@ button:hover {
   text-shadow: 2px 2px 10px #000;
 }
 
+.descarga-cupones {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+  
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.btn-descargar {
+  display: inline-block;
+  background-color: #c9c2b9; /* tono dorado/romano */
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+.btn-descargar2 {
+  display: inline-block;
+  background-color: #f2efeb; /* tono dorado/romano */
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-descargar:hover {
+  background-color: #b2834f;
+  transform: scale(1.05);
+}
+
 /* ---- Animaciones ---- */
 @keyframes popBounce {
   0%   { transform: scale(0.2) rotate(0deg); }

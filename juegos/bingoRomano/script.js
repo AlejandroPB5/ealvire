@@ -1,7 +1,7 @@
 const numbers = [
     "XXI", "XL", "LI", "DL", "DXXXIV",
     "XIV", "CXIII", "M", "CCI", "CCXXVII",
-    "IX", "IL", "XC", "D", "VI", "LX", "LXX",
+    "IX", "XLIX", "XC", "D", "VI", "LX", "LXX",
     "CDXXXV","MMDCCII","CCIV","MDCCCLXI","MMMLXXIV",
     "XXXIV","XVIII","XLIX"
 ];
