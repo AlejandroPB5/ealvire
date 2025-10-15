@@ -90,11 +90,23 @@ function showFeedbackGif(category, result) {
   const gif = document.createElement('img');
   gif.classList.add('feedback-gif');
   gif.src = result === 'correct'
-    ? '../../assets/img/yes.gif' // ✅ correcto
-    : '../../assets/img/nop.gif'; // ❌ incorrecto
+    ? '../../assets/img/yes.gif'   // ✅ correcto
+    : '../../assets/img/nop.gif';  // ❌ incorrecto
+
+  // Si ya hay un GIF previo, elimínalo
+  const existingGif = category.querySelector('.feedback-gif');
+  if (existingGif) existingGif.remove();
+
   category.appendChild(gif);
-  setTimeout(() => gif.remove(), 2800);
+  category.classList.add('show-gif');
+
+  // Duración de la animación (3 segundos)
+  setTimeout(() => {
+    gif.remove();
+    category.classList.remove('show-gif');
+  }, 3000);
 }
+
 
 
 // Quitar cualquier gif previo
