@@ -10,7 +10,7 @@ const wordBank = {
   sustantivo: ['niño', 'casa', 'flor', 'perro', 'libro', 'montaña'],
   adjetivo: ['bonito', 'rápido', 'feliz', 'alto', 'frío', 'dulce'],
   verbo: ['correr', 'saltar', 'leer', 'comer', 'dormir', 'escribir'],
-  determinante: ['el', 'la', 'los', 'las', 'un', 'una']
+  determinante: ['el', 'la', 'los', 'las', 'un', 'una','este','aquellos','tu','vuestro','muchas','algunos','siete','quinto','ocho','sexto']
 };
 
 // Función para generar 2 palabras al azar por tipo
