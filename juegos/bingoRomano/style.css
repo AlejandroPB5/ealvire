@@ -174,14 +174,57 @@ button:hover {
 }
 
 .descarga-cupones {
+  font-family: 'Comic Neue', cursive;
+  display: inline-block; /* El fondo se ajusta al contenido */
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
   font-size: 1.2rem;
   color: #ffffff;
-  
+  background-color: #a00000;
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
+.descarga-cupones p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espacio entre texto e icono */
+  flex-wrap: wrap;
+}
+
+.icono-descarga {
+  color: #ffcc00;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.icono-descarga:hover {
+  color: #ffd84d;
+  transform: scale(1.2);
+}
+
+
+
+.btn-descarga {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ffcc00;
+  color: #4b2e0e;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-descarga:hover {
+  background-color: #ffb300;
+  transform: scale(1.05);
+}
+
 
 .btn-descargar {
   display: inline-block;

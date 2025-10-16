@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bingo Romano</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -15,7 +16,18 @@
     <img src="../../assets/img/icono_roma.svg" alt="Icono" class="icono-svg">
   </h1>
 
-  <!-- 🧾 Sección de descarga -->
+<div class="container text-center">
+  <div class="descarga-cupones">
+    <p>
+      Accede a la zona de descargas para descargar los cartones.
+      <a href="../../descargas/index.html" class="icono-descarga" title="Ir a descargas">
+        <i class="fas fa-download"></i>
+      </a>
+    </p>
+  </div>
+</div>
+
+
 
 
   <div class="bingo-container">
@@ -36,17 +48,7 @@
     <button id="bingo-btn" class="bingo-btn">¡Bingo!</button>
   </div>
 <br>
-  <div class="descarga-cupones">
 
-    <a href="../../assets/docs/cartones_versionIguales.pdf" download class="btn-descargar">
-      ⬇️ Descargar cartones (Todos con los mismos números)
-    </a>
-    <br>
-    <br>
-    <a href="../../assets/docs/cartones_versionDiferentes.pdf" download class="btn-descargar2">
-      ⬇️ Descargar cartones (Cada cartón con números diferentes)
-    </a>
-  </div>
   <!-- Overlay de Bingo -->
   <div id="bingo-overlay">
     <div id="bingo-content">

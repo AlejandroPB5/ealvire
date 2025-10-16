@@ -47,6 +47,12 @@ body {
   border-radius: 12px;
   font-weight: bold;
 }
+.btn-descargar {
+  border-radius: 12px;
+  font-weight:normal;
+  color: black;
+  background-color: #b2fcbe;
+}
 
 .genially-section h2 {
   font-family: 'Fredoka One', cursive;
@@ -187,6 +193,17 @@ html {
   /* necesario para centrar correctamente */
   border-radius: 16px;
   /* opcional, para mantener estilo suave */
+}
+
+.icono-descarga {
+  color: #000000;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.icono-descarga:hover {
+  color: #0aca44;
+  transform: scale(1.2);
 }
 
 /* Versión responsive: ocultar o reducir personaje en pantallas pequeñas */
