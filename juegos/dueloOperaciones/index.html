@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuentas a Mano | Recursos By Ealvire</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fredoka+One&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" href="../../assets/img/elvire.jpg" type="image/x-icon">
+</head>
+
+<body>
+  <!-- ✅ Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fs-3 fw-bold" href="../../index.html">📚 Recursos By Ealvire</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="../../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../index.html#genially">Zona Genially</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="../../index.html#juegos">Zona
+              Juegos</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../index.html#herramientas">Herramientas</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../recursos/ciclos.html">Recursos por Ciclo</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ✅ Cabecera -->
+  <header class="school-header text-center text-white py-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold"> 🔴Duelo de Operaciones🔵</h1>
+      <p class="lead">Suma puntos para tu equipo mientras aprendes a resolver operaciones de varias cifras.</p>
+    </div>
+  </header>
+
+  <!-- ✅ Contenido principal -->
+  <main class="container text-center py-5">
+    <div class="exercise-container p-4 rounded shadow-lg bg-light mx-auto" style="max-width: 1000px;">
+
+
+      <div class="row justify-content-center g-4 mb-3">
+
+        <!-- Equipo rojo -->
+        <div class="col-md-6">
+          <div class="pizarra equipo-rojo text-center shadow">
+            <h2 class="fw-bold text-danger">Equipo Rojo 🔴 -> <span id="puntos-rojo">0</span> pts</h2>
+
+            <div id="operacion-rojo" class="fw-bold mb-2">
+              <button class="btn btn-danger btn-sm" id="nuevaCuentaRojo">Nueva cuenta</button>
+            </div>
+
+            <canvas id="pizarra-rojo" width="400" height="250"></canvas>
+
+            <div class="mt-3">
+              <button id="verResultadoRojo" class="btn btn-success fw-bold">👀 Ver resultado</button>
+              <button id="borrarRojo" class="btn btn-warning fw-bold">❌ Borrar</button>
+            </div>
+
+            <div class="mt-3">
+              <button id="sumarRojo" class="btn btn-danger btn-sm fw-bold">+1 punto</button>
+            </div>
+
+            <div id="mensaje-rojo" class="mt-2 fw-bold"></div>
+          </div>
+        </div>
+
+        <!-- Equipo azul -->
+        <div class="col-md-6">
+          <div class="pizarra equipo-azul text-center shadow">
+            <h2 class="fw-bold text-primary">Equipo Azul 🔵 —> <span id="puntos-azul">0</span> pts</h2>
+
+            <div id="operacion-azul" class="fw-bold mb-2">
+              <button class="btn btn-primary btn-sm" id="nuevaCuentaAzul">Nueva cuenta</button>
+            </div>
+
+            <canvas id="pizarra-azul" width="400" height="250"></canvas>
+
+            <div class="mt-3">
+              <button id="verResultadoAzul" class="btn btn-success fw-bold">👀 Ver resultado</button>
+              <button id="borrarAzul" class="btn btn-warning fw-bold">❌ Borrar</button>
+            </div>
+
+            <div class="mt-3">
+              <button id="sumarAzul" class="btn btn-primary btn-sm fw-bold">+1 punto</button>
+            </div>
+
+            <div id="mensaje-azul" class="mt-2 fw-bold"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer class="bg-primary text-white text-center py-3 mt-5">
+    <a href="https://www.instagram.com/by_ealvire/?igsh=MTdlbGhqOHVxczRkZw%3D%3D#" target="_blank"
+      class="text-white text-decoration-none">
+      <i class="fab fa-instagram"></i> by_ealvire
+    </a>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
