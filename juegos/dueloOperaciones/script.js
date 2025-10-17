@@ -21,21 +21,65 @@ document.addEventListener("DOMContentLoaded", () => {
     let puntos = 0;
     let resultadoActual = null;
 
-    // Dibujo libre
-    canvas.addEventListener("mousedown", e => {
-      dibujando = true;
-      ctx.beginPath();
-      ctx.moveTo(e.offsetX, e.offsetY);
-    });
+    // Dibujo libre (ratón + táctil)
+canvas.addEventListener("mousedown", startDraw);
+canvas.addEventListener("mousemove", draw);
+canvas.addEventListener("mouseup", stopDraw);
+canvas.addEventListener("mouseleave", stopDraw);
 
-    canvas.addEventListener("mousemove", e => {
-      if (!dibujando) return;
-      ctx.lineWidth = 3;
-      ctx.lineCap = "round";
-      ctx.strokeStyle = eq.color;
-      ctx.lineTo(e.offsetX, e.offsetY);
-      ctx.stroke();
-    });
+canvas.addEventListener("touchstart", startDrawTouch, { passive: false });
+canvas.addEventListener("touchmove", drawTouch, { passive: false });
+canvas.addEventListener("touchend", stopDraw);
+canvas.addEventListener("touchcancel", stopDraw);
+
+function startDraw(e) {
+  dibujando = true;
+  ctx.beginPath();
+  ctx.moveTo(e.offsetX, e.offsetY);
+}
+
+function draw(e) {
+  if (!dibujando) return;
+  ctx.lineWidth = 3;
+  ctx.lineCap = "round";
+  ctx.strokeStyle = eq.color;
+  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.stroke();
+}
+
+function stopDraw() {
+  dibujando = false;
+}
+
+// Funciones táctiles
+function getTouchPos(touchEvent) {
+  const rect = canvas.getBoundingClientRect();
+  const touch = touchEvent.touches[0] || touchEvent.changedTouches[0];
+  return {
+    x: touch.clientX - rect.left,
+    y: touch.clientY - rect.top
+  };
+}
+
+function startDrawTouch(e) {
+  e.preventDefault(); // Evita scroll al dibujar
+  dibujando = true;
+  const pos = getTouchPos(e);
+  ctx.beginPath();
+  ctx.moveTo(pos.x, pos.y);
+}
+
+function drawTouch(e) {
+  e.preventDefault();
+  if (!dibujando) return;
+  const pos = getTouchPos(e);
+  ctx.lineWidth = 3;
+  ctx.lineCap = "round";
+  ctx.strokeStyle = eq.color;
+  ctx.lineTo(pos.x, pos.y);
+  ctx.stroke();
+}
+
 
     canvas.addEventListener("mouseup", () => (dibujando = false));
     canvas.addEventListener("mouseleave", () => (dibujando = false));
