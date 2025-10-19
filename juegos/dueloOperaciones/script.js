@@ -21,73 +21,98 @@ document.addEventListener("DOMContentLoaded", () => {
     let puntos = 0;
     let resultadoActual = null;
 
-    // Dibujo libre (ratón + táctil)
-canvas.addEventListener("mousedown", startDraw);
-canvas.addEventListener("mousemove", draw);
-canvas.addEventListener("mouseup", stopDraw);
-canvas.addEventListener("mouseleave", stopDraw);
+    // === Ajuste del canvas para pantallas HiDPI ===
+    function resizeCanvasForDisplay(canvas, ctx) {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      const displayWidth  = Math.round(rect.width);
+      const displayHeight = Math.round(rect.height);
 
-canvas.addEventListener("touchstart", startDrawTouch, { passive: false });
-canvas.addEventListener("touchmove", drawTouch, { passive: false });
-canvas.addEventListener("touchend", stopDraw);
-canvas.addEventListener("touchcancel", stopDraw);
+      if (canvas.width !== Math.round(displayWidth * dpr) || canvas.height !== Math.round(displayHeight * dpr)) {
+        canvas.width  = Math.round(displayWidth * dpr);
+        canvas.height = Math.round(displayHeight * dpr);
+        canvas.style.width  = displayWidth + "px";
+        canvas.style.height = displayHeight + "px";
 
-function startDraw(e) {
-  dibujando = true;
-  ctx.beginPath();
-  ctx.moveTo(e.offsetX, e.offsetY);
-}
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
+      }
+    }
 
-function draw(e) {
-  if (!dibujando) return;
-  ctx.lineWidth = 3;
-  ctx.lineCap = "round";
-  ctx.strokeStyle = eq.color;
-  ctx.lineTo(e.offsetX, e.offsetY);
-  ctx.stroke();
-}
+    resizeCanvasForDisplay(canvas, ctx);
+    window.addEventListener("resize", () => resizeCanvasForDisplay(canvas, ctx));
 
-function stopDraw() {
-  dibujando = false;
-}
+    // === Dibujo con ratón ===
+    canvas.addEventListener("mousedown", e => {
+      resizeCanvasForDisplay(canvas, ctx);
+      dibujando = true;
+      const rect = canvas.getBoundingClientRect();
+      ctx.beginPath();
+      ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+    });
 
-// Funciones táctiles
-function getTouchPos(touchEvent) {
-  const rect = canvas.getBoundingClientRect();
-  const touch = touchEvent.touches[0] || touchEvent.changedTouches[0];
-  return {
-    x: touch.clientX - rect.left,
-    y: touch.clientY - rect.top
-  };
-}
-
-function startDrawTouch(e) {
-  e.preventDefault(); // Evita scroll al dibujar
-  dibujando = true;
-  const pos = getTouchPos(e);
-  ctx.beginPath();
-  ctx.moveTo(pos.x, pos.y);
-}
-
-function drawTouch(e) {
-  e.preventDefault();
-  if (!dibujando) return;
-  const pos = getTouchPos(e);
-  ctx.lineWidth = 3;
-  ctx.lineCap = "round";
-  ctx.strokeStyle = eq.color;
-  ctx.lineTo(pos.x, pos.y);
-  ctx.stroke();
-}
-
+    canvas.addEventListener("mousemove", e => {
+      if (!dibujando) return;
+      const rect = canvas.getBoundingClientRect();
+      ctx.lineWidth = 3;
+      ctx.lineCap = "round";
+      ctx.strokeStyle = eq.color;
+      ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+      ctx.stroke();
+    });
 
     canvas.addEventListener("mouseup", () => (dibujando = false));
     canvas.addEventListener("mouseleave", () => (dibujando = false));
 
-    // Nueva cuenta
+    // === Dibujo táctil (multitouch) ===
+    const activeTouches = new Map();
+
+    canvas.addEventListener("touchstart", e => {
+      e.preventDefault();
+      resizeCanvasForDisplay(canvas, ctx);
+      const rect = canvas.getBoundingClientRect();
+      for (const touch of e.changedTouches) {
+        const id = touch.identifier;
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        activeTouches.set(id, { x, y });
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+      }
+    }, { passive: false });
+
+    canvas.addEventListener("touchmove", e => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      for (const touch of e.changedTouches) {
+        const id = touch.identifier;
+        const prev = activeTouches.get(id);
+        if (!prev) continue;
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        ctx.beginPath();
+        ctx.moveTo(prev.x, prev.y);
+        ctx.lineTo(x, y);
+        ctx.lineWidth = 3;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = eq.color;
+        ctx.stroke();
+        activeTouches.set(id, { x, y });
+      }
+    }, { passive: false });
+
+    canvas.addEventListener("touchend", e => {
+      for (const touch of e.changedTouches) activeTouches.delete(touch.identifier);
+    });
+
+    canvas.addEventListener("touchcancel", e => {
+      for (const touch of e.changedTouches) activeTouches.delete(touch.identifier);
+    });
+
+    // === Nueva cuenta ===
     nuevaBtn.addEventListener("click", () => {
       const a = Math.floor(Math.random() * 90000) + 1000;
-      const b = Math.floor(Math.random() * a);
+      const b = Math.floor(Math.random() * (a - 1000)) + 1000; // evita negativos
       const operaciones = ["+", "-", "x"];
       const oper = operaciones[Math.floor(Math.random() * operaciones.length)];
 
@@ -101,7 +126,7 @@ function drawTouch(e) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
     });
 
-    // Ver resultado
+    // === Ver resultado ===
     verBtn.addEventListener("click", () => {
       if (resultadoActual !== null) {
         mensaje.textContent = `Resultado: ${resultadoActual}`;
@@ -110,12 +135,12 @@ function drawTouch(e) {
       }
     });
 
-    // Borrar
+    // === Borrar ===
     borrarBtn.addEventListener("click", () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
     });
 
-    // Sumar punto
+    // === Sumar punto ===
     sumarBtn.addEventListener("click", () => {
       puntos++;
       puntosSpan.textContent = puntos;
