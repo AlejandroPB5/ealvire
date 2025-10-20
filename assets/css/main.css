@@ -117,7 +117,7 @@ html {
 }
 
 .resource-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: whitesmoke;
   border-radius: 20px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
@@ -134,6 +134,8 @@ html {
   transform: translateY(-6px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
+
+
 
 /* Cabecera con fondo */
 .school-header {
