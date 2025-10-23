@@ -121,7 +121,14 @@ document.addEventListener("DOMContentLoaded", () => {
         oper === "-" ? a - b :
         a * b;
 
-      opDiv.innerHTML = `<h3>${a} ${oper} ${b} = ?</h3>`;
+      let cuentaExistente = opDiv.querySelector(".operacion-texto");
+if (!cuentaExistente) {
+  cuentaExistente = document.createElement("h3");
+  cuentaExistente.classList.add("operacion-texto");
+  opDiv.appendChild(cuentaExistente);
+}
+cuentaExistente.textContent = `${a} ${oper} ${b} = ?`;
+
       mensaje.textContent = "";
       ctx.clearRect(0, 0, canvas.width, canvas.height);
     });
