@@ -1,0 +1,162 @@
+/* === ESTILO GENERAL === */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.school-header {
+  background: linear-gradient(135deg, #007bff, #6610f2);
+}
+
+footer {
+  font-size: 0.9rem;
+}
+
+/* === FRASES / FRACTION CONTAINER === */
+#fracciones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+#fracciones span {
+  display: inline-block;
+  background: #fff;
+  border: 3px solid #ccc;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  min-width: 120px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#fracciones span:hover {
+  transform: scale(1.1);
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+}
+
+/* === ESTADOS VISUALES === */
+.correct {
+  border-color: #28a745 !important;
+  background-color: #d4edda !important;
+  color: #155724 !important;
+  transform: scale(1.1);
+}
+
+.incorrect {
+  border-color: #dc3545 !important;
+  background-color: #f8d7da !important;
+  color: #721c24 !important;
+  transform: scale(0.95);
+}
+
+/* mientras el equipo está activo (esperando que elija) */
+.active-left, .active-right {
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0px rgba(0,123,255,0.6); }
+  50% { box-shadow: 0 0 15px rgba(0,123,255,0.8); }
+  100% { box-shadow: 0 0 0px rgba(0,123,255,0.6); }
+}
+
+/* === BOTONES === */
+.buttons button {
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+/* === PISTA DE CARRERA === */
+.pista {
+background-image: url('../../assets/img/green.png');
+  width: 90%;
+  height: 160px;
+  border: 3px dashed #ccc;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #fff 80%, #f0f0f0 20%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Meta (al final de la pista) */
+.meta {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #000,
+    #000 10px,
+    #fff 10px,
+    #fff 20px
+  );
+}
+
+/* === CORREDORES === */
+/* === CORREDORES (Sonic) === */
+.corredor {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* transiciones suaves */
+  transition: left 1s linear;
+}
+
+/* Sonic rojo */
+.corredor-rojo {
+  top: 15px;
+  background-image: url('../../assets/img/tails.gif');
+  left: 0%; /* posición inicial */
+}
+
+/* Sonic azul */
+.corredor-azul {
+  top: 80px; /* un poco más separado para que no se solapen */
+  background-image: url('../../assets/img/sonic.gif');
+  left: 0%;
+}
+
+
+
+/* === MENSAJE === */
+#mensaje {
+  min-height: 40px;
+  font-weight: 600;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  #fracciones span {
+    min-width: 80px;
+    padding: 0.7rem 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  .corredor {
+    font-size: 2rem;
+  }
+
+  .pista {
+    height: 90px;
+  }
+}
+.saltar {
+  animation: saltito 0.4s ease-out;
+}
+
+@keyframes saltito {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+
