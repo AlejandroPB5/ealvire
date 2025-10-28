@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnRojo.disabled = false;
     btnAzul.disabled = false;
     equipoActiva = null;
-    mensaje.textContent = "Pulsa tu equipo y luego toca la fracción que creas mayor";
+    mensaje.textContent = "Pulsa tu equipo y luego toca la fracción  que sea MAYOR";
     clearSelectionVisual();
   }
 
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnRojo.addEventListener("click", () => {
     if (btnRojo.disabled) return;
     equipoActiva = "rojo";
-    mensaje.textContent = "🔴 Elige la fracción que crees mayor (toca izquierda o derecha)";
+    mensaje.textContent = "🔴 Elige la fracción  que sea MAYOR (toca izquierda o derecha)";
     btnRojo.disabled = true;
     btnAzul.disabled = true;
     markActiveTeamVisual("rojo");
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnAzul.addEventListener("click", () => {
     if (btnAzul.disabled) return;
     equipoActiva = "azul";
-    mensaje.textContent = "🔵 Elige la fracción que crees mayor (toca izquierda o derecha)";
+    mensaje.textContent = "🔵 Elige la fracción  que sea MAYOR (toca izquierda o derecha)";
     btnRojo.disabled = true;
     btnAzul.disabled = true;
     markActiveTeamVisual("azul");
