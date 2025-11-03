@@ -10,13 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Si ya lo tienes en otro fichero, elimina la declaración siguiente.
   const modos = {
     angulos: {
-      categorias: ["Agudo", "Recto", "Obtuso", "Paralelas", "Secantes"],
+      categorias: ["Agudo", "Recto", "Obtuso","Segmento" ,"Semirrecta","Recta","Paralelas","Perpendiculares", "Secantes"],
       imagenes: [
         { src: "../../assets/img/figuras/agudo.png", categoria: "Agudo" },
-        { src: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><path d='M20 80 L20 20 L80 20' fill='none' stroke='%23333' stroke-width='4'/></svg>", categoria: "Recto" },
+        { src: "../../assets/img/figuras/recto.png", categoria: "Recto" },
         { src: "../../assets/img/figuras/obtuso.png", categoria: "Obtuso" },
-        { src: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><line x1='20' y1='20' x2='80' y2='80' stroke='%23333' stroke-width='3'/><line x1='20' y1='40' x2='80' y2='100' stroke='%23333' stroke-width='3'/></svg>", categoria: "Paralelas" },
-        { src: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><line x1='20' y1='20' x2='80' y2='80' stroke='%23333' stroke-width='3'/><line x1='20' y1='80' x2='80' y2='20' stroke='%23333' stroke-width='3'/></svg>", categoria: "Secantes" }
+        { src: "../../assets/img/figuras/segmen.png", categoria: "Segmento" },
+        { src: "../../assets/img/figuras/semirrecta.png", categoria: "Semirrecta" },
+        { src: "../../assets/img/figuras/recta.png", categoria: "Recta" },
+        { src: "../../assets/img/figuras/paralelas.png", categoria: "Paralelas" },
+        { src: "../../assets/img/figuras/perpendiculares.png", categoria: "Perpendiculares" },
+        { src: "../../assets/img/figuras/secantes.png", categoria: "Secantes" }
       ]
     },
     triangulos: {
