@@ -134,8 +134,15 @@ document.addEventListener("DOMContentLoaded", () => {
       mensaje.textContent = "✅ ¡Bien hecho!";
 
       // eliminar la imagen original del área superior
-      const imgOriginal = Array.from(imagenesDiv.querySelectorAll("img")).find(i => i.src === src);
+      // Eliminar la imagen original del área superior (funciona con rutas locales y absolutas)
+      const imgOriginal = Array.from(imagenesDiv.querySelectorAll("img")).find(i => {
+        const nombreImgArrastrada = src.split("/").pop(); // ejemplo: "cuadrado.png"
+        const nombreImgOriginal = i.src.split("/").pop(); // extrae también el nombre base
+        return nombreImgArrastrada === nombreImgOriginal; // compara solo el nombre del archivo
+      });
+
       if (imgOriginal) imgOriginal.remove();
+
 
       // crear miniatura pequeña centrada BAJO el texto de la categoría
       const mini = document.createElement("img");
