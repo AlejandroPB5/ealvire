@@ -132,48 +132,50 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // procesa colocación correcta/incorrecta: mantiene la funcionalidad previa
-  function procesarColocacion(categoriaDiv, categoriaArrastrada, src) {
-    if (categoriaArrastrada === categoriaDiv.dataset.categoria) {
-      categoriaDiv.classList.add("correcto");
-      mensaje.textContent = "✅ ¡Bien hecho!";
+function procesarColocacion(categoriaDiv, categoriaArrastrada, src) {
+  if (categoriaArrastrada === categoriaDiv.dataset.categoria) {
+    categoriaDiv.classList.add("correcto");
+    mensaje.textContent = "✅ ¡Bien hecho!";
 
-      // eliminar la imagen original del área superior
-      // Eliminar la imagen original del área superior (funciona con rutas locales y absolutas)
-      const imgOriginal = Array.from(imagenesDiv.querySelectorAll("img")).find(i => {
-        const nombreImgArrastrada = src.split("/").pop(); // ejemplo: "cuadrado.png"
-        const nombreImgOriginal = i.src.split("/").pop(); // extrae también el nombre base
-        return nombreImgArrastrada === nombreImgOriginal; // compara solo el nombre del archivo
-      });
+    // ------ INICIO DE LA CORRECCIÓN ------
+    
+    // Ya no comparamos el 'src'.
+    // Buscamos la imagen en 'imagenesDiv' que tenga la misma
+    // categoría que la que acabamos de arrastrar.
+    const imgOriginal = Array.from(imagenesDiv.querySelectorAll("img"))
+                           .find(i => i.dataset.categoria === categoriaArrastrada);
+    
+    // ------ FIN DE LA CORRECCIÓN ------
 
-      if (imgOriginal) imgOriginal.remove();
+    if (imgOriginal) imgOriginal.remove();
 
 
-      // crear miniatura pequeña centrada BAJO el texto de la categoría
-      const mini = document.createElement("img");
-      mini.src = src;
-      mini.alt = categoriaArrastrada;
-      mini.className = "figura-colocada";
-      // si ya había una miniatura, la reemplazamos
-      const previa = categoriaDiv.querySelector(".figura-colocada");
-      if (previa) previa.remove();
-      categoriaDiv.appendChild(mini);
+    // crear miniatura pequeña centrada BAJO el texto de la categoría
+    const mini = document.createElement("img");
+    mini.src = src;
+    mini.alt = categoriaArrastrada;
+    mini.className = "figura-colocada";
+    // si ya había una miniatura, la reemplazamos
+    const previa = categoriaDiv.querySelector(".figura-colocada");
+    if (previa) previa.remove();
+    categoriaDiv.appendChild(mini);
 
-      // si no quedan imágenes en la zona superior, aviso final
-      if (imagenesDiv.querySelectorAll("img").length === 0) {
-        mensaje.textContent = "🎉 ¡Has clasificado todas las figuras!";
-      }
-
-      setTimeout(() => categoriaDiv.classList.remove("correcto"), 900);
-    } else {
-      categoriaDiv.classList.add("incorrecto");
-      mensaje.textContent = "❌ Prueba otra vez.";
-      setTimeout(() => {
-        categoriaDiv.classList.remove("incorrecto");
-        // limpiar mensaje breve
-        mensaje.textContent = "";
-      }, 900);
+    // si no quedan imágenes en la zona superior, aviso final
+    if (imagenesDiv.querySelectorAll("img").length === 0) {
+      mensaje.textContent = "🎉 ¡Has clasificado todas las figuras!";
     }
+
+    setTimeout(() => categoriaDiv.classList.remove("correcto"), 900);
+  } else {
+    categoriaDiv.classList.add("incorrecto");
+    mensaje.textContent = "❌ Prueba otra vez.";
+    setTimeout(() => {
+      categoriaDiv.classList.remove("incorrecto");
+      // limpiar mensaje breve
+      mensaje.textContent = "";
+    }, 900);
   }
+}
 
   // ===== Soporte táctil: clon visual que sigue el dedo =====
   let toqueClone = null;
