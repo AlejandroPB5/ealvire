@@ -4,7 +4,28 @@ body {
   font-family: 'Comic Neue', cursive;
   margin: 0;
   padding: 0;
-  color: #222;
+  color: #000000;
+}
+
+main {
+  position: relative;       /* Necesario para que ::before se posicione relativo al main */
+  min-height: 80vh;         /* Ajusta según lo que quieras ocupar */
+  z-index: 0;               /* Asegura que el contenido esté por encima del fondo */
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/img/fondoFiguras.png'); /* Cambia la ruta */
+  background-size: cover;        /* Ocupa todo el main */
+  background-position: center;   /* Centrada */
+  background-repeat: no-repeat;  /* Sin repetirse */
+  opacity: 0.3;                  /* Ajusta transparencia */
+  z-index: -1;                   /* Fondo detrás del contenido */
 }
 
 /* header h1 {
