@@ -7,10 +7,10 @@ body {
   color: #222;
 }
 
-header h1 {
+/* header h1 {
   font-family: 'Fredoka One', cursive;
   margin: 0;
-}
+} */
 
 .imagenes {
   display: flex;

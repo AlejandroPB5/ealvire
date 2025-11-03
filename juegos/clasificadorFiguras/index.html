@@ -42,10 +42,16 @@
             </div>
         </div>
     </nav>
-  <header class="text-center py-4 bg-primary text-white">
-    <h1>🎨 Clasificador de Figuras</h1>
-    <p>Arrastra cada imagen a su categoría correcta</p>
-  </header>
+    <header class="school-header text-center text-white py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Clasificador de Figuras Geométricas</h1>
+            <p class="lead">Arrastra las figuras a la categoría correcta</p>
+            <!-- <p class="lead">Accede a la plantilla para los alumnos en la zona de Descargas <a
+                    href="../../descargas/index.html" class="icono-descarga" title="Ir a descargas">
+                    <i class="fas fa-download"></i>
+                </a></p> -->
+        </div>
+    </header>
 
   <main class="container text-center mt-4">
     <!-- Selector de modo -->
@@ -67,13 +73,20 @@
       <div id="imagenes" class="imagenes"></div>
       <div id="categorias" class="categorias mt-4"></div>
     </div>
+    
 
     <div id="mensaje" class="mt-3 fs-5 fw-bold"></div>
+    <div id="contenedor-imagen-ayuda" class="mt-4 w-100 d-flex justify-content-center">
+        <!-- Pon el enlace en el src de la img siguiente -->
+        <img id="imagen-ayuda" src="../../assets/img/clasificaFiguras.jpg" alt="Imagen de apoyo" class="img-fluid rounded shadow-sm" style="max-width:420px;">
+      </div>
+      <!-- ============================================================================== -->
+    </div>
   </main>
 
-  <footer class="text-center py-3 mt-5 bg-primary text-white">
-    <p>by_ealvire ✨</p>
-  </footer>
+<footer class="bg-primary text-white text-center py-3 mt-5">
+        <small>© 2025 Recursos By Ealvire</small>
+    </footer>
 
   <script src="script.js"></script>
 </body>
