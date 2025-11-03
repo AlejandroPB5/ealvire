@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { src: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,20 80,90 20,90' fill='%23ffd6e0' stroke='%23333' stroke-width='3'/></svg>", categoria: "Isósceles" },
         { src: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='10,90 80,90 40,20' fill='%23c7f9d9' stroke='%23333' stroke-width='3'/></svg>", categoria: "Escaleno" },
         { src: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='10,90 10,20 90,90' fill='%23ffd166' stroke='%23333' stroke-width='3'/></svg>", categoria: "Rectángulo" },
-        { src: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,10 85,85 15,85' fill='%23f0d6ff' stroke='%23333' stroke-width='3'/></svg>", categoria: "Acutángulo" },
+        { src: "../../assets/img/figuras/tri_acutangulo.png", categoria: "Acutángulo" },
         { src: "../../assets/img/figuras/obtusangulo.png", categoria: "Obtusángulo" }
       ]
     },
