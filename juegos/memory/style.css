@@ -41,18 +41,19 @@ body{
 }
 
 /* Board grid */
-.board{
+.board {
   display: grid;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
+
 /* responsive grid columns depending on card count */
-.board.cols-3 { grid-template-columns: repeat(3, minmax(90px, 120px)); }
-.board.cols-4 { grid-template-columns: repeat(4, minmax(90px, 130px)); }
-.board.cols-5 { grid-template-columns: repeat(5, minmax(80px, 140px)); }
-.board.cols-6 { grid-template-columns: repeat(6, minmax(70px, 140px)); }
+.board.cols-6  { grid-template-columns: repeat(6, 1fr); }
+.board.cols-8  { grid-template-columns: repeat(8, 1fr); }
+.board.cols-10 { grid-template-columns: repeat(10, 1fr); }
+
 
 /* Card */
 .card-memory{

@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { word: "corre", tipo: "Verbo", acento: "Llano" },
         { word: "árabe", tipo: "Adjetivo", acento: "Esdrújula" },
         { word: "camión", tipo: "Sustantivo", acento: "Aguda" },
-        { word: "rápidamente", tipo: "Adverbio", acento: "Esdrújula" },
+        { word: "cantar", tipo: "Verbo", acento: "Esdrújula" },
         { word: "árbitro", tipo: "Sustantivo", acento: "Esdrújula" },
         { word: "perro", tipo: "Sustantivo", acento: "Llana" },
         { word: "dulce", tipo: "Adjetivo", acento: "Llano" },
@@ -82,38 +82,61 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ---------- generar parejas según modo ---------- */
     function buildPairs() {
         if (modo === "romanos") {
-            // generamos 'pares' números distintos en un rango razonable
-            const min = 1, max = 399; // límite para no obtener numeros demasiado largos
+            const min = 1, max = 399;
             const set = new Set();
             while (set.size < pares) {
                 const n = Math.floor(Math.random() * (max - min + 1)) + min;
                 set.add(n);
             }
             const arr = [...set];
-            // cada par: un elemento con 'arabigo', otro con 'romano'
             const pairs = [];
             arr.forEach((n, i) => {
                 pairs.push({ id: `r-${i}`, type: "arabigo", label: String(n), meta: n });
                 pairs.push({ id: `r-${i}`, type: "romano", label: toRoman(n), meta: n });
             });
             return shuffle(pairs);
-        } else {
-            // modo palabras: elegimos 'pares' palabras distintas del banco (si hay suficientes)
+        }
+
+        /** -------------------------
+            NUEVO: modo acentuación
+            ------------------------- */
+        if (modo === "acentuacion") {
             const bank = [...wordBank];
             shuffle(bank);
             const selected = bank.slice(0, pares);
             const pairs = [];
+
             selected.forEach((obj, idx) => {
-                const id = `w-${idx}`;
-                // carta 1: la palabra
-                pairs.push({ id, type: "word", label: obj.word, meta: obj });
-                // carta 2: la etiqueta "Tipo, Acentuación"
-                const label2 = `${obj.tipo}, ${obj.acento}`;
-                pairs.push({ id, type: "label", label: label2, meta: obj });
+                const id = `a-${idx}`;
+                pairs.push({ id, type: "word", label: obj.word, meta: obj.acento });
+                pairs.push({ id, type: "label", label: obj.acento, meta: obj.acento });
             });
+
             return shuffle(pairs);
         }
+
+        /** -------------------------
+            NUEVO: modo tipo de palabra
+            ------------------------- */
+        if (modo === "tipo") {
+            const bank = [...wordBank];
+            shuffle(bank);
+            const selected = bank.slice(0, pares);
+            const pairs = [];
+
+            selected.forEach((obj, idx) => {
+                const id = `t-${idx}`;
+                pairs.push({ id, type: "word", label: obj.word, meta: obj.tipo });
+                pairs.push({ id, type: "label", label: obj.tipo, meta: obj.tipo });
+            });
+
+            return shuffle(pairs);
+        }
+
+        // por si algo cae aquí (seguridad)
+        return [];
     }
+
 
     /* ---------- renderizar tablero ---------- */
     function renderBoard() {
@@ -179,12 +202,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // helper: map pairs to columns for nicer grid
     function pairsToCols(pairsCount) {
-        // total cards = pairsCount * 2
-        if (pairsCount <= 6) return 3;
-        if (pairsCount === 8) return 4;
-        if (pairsCount === 10) return 5;
-        return 6;
+        const total = pairsCount * 2;
+
+        if (total <= 12) return 6;   // 2 filas
+        if (total <= 16) return 8;   // 2 filas
+        if (total <= 20) return 10;  // 2 filas
+        if (total <= 24) return 8;   // 3 filas
+        return 10;                   // 3 filas
     }
+
+
 
     function escapeHtml(s) {
         return String(s).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
