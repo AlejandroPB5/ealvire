@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Memory | Recursos By Ealvire</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fuentes (similares al resto de la web) -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Estilos locales -->
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="../../assets/css/main.css">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fs-3 fw-bold" href="../../index.html">📚 Recursos By Ealvire</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#genially">Zona Genially</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../../index.html#juegos">Zona Juegos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#herramientas">Herramientas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../recursos/ciclos.html">Recursos por Ciclo</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../descargas/index.html">Descargas</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Cabecera -->
+  <header class="school-header text-center text-white py-4">
+    <div class="container">
+      <h1 class="display-5 fw-bold">🧠 Memory Educativo</h1>
+      <p class="lead">Practica números romanos o clasificación de palabras. Toca las cartas para voltear.</p>
+    </div>
+  </header>
+
+  <!-- Contenido -->
+  <main class="container py-4">
+    <div class="row mb-3 align-items-center">
+      <div class="col-md-6 mb-2">
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <label class="fw-bold mb-0">Modo:</label>
+          <select id="modoSelect" class="form-select w-auto">
+            <option value="romanos">Números romanos</option>
+            <option value="palabras">Palabras (tipo + acentuación)</option>
+          </select>
+
+          <label class="fw-bold mb-0 ms-3">Pares:</label>
+          <select id="paresSelect" class="form-select w-auto">
+            <option value="6">6 pares</option>
+            <option value="8" selected>8 pares</option>
+            <option value="10">10 pares</option>
+            <option value="12">12 pares</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-md-6 text-md-end">
+        <button id="btnReiniciar" class="btn btn-outline-warning me-2">🔁 Reiniciar</button>
+        <button id="btnBarajar" class="btn btn-outline-primary me-2">🔀 Barajar</button>
+        <button id="btnMostrarSol" class="btn btn-outline-success">👁️ Mostrar todas</button>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <div class="stat">Turnos: <span id="turnos">0</span></div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat">Aciertos: <span id="aciertos">0</span></div>
+      </div>
+      <div class="col-md-4 text-md-end">
+        <div class="stat">Tiempo: <span id="tiempo">00:00</span></div>
+      </div>
+    </div>
+
+    <!-- Tablero -->
+    <section id="gameArea" class="game-area mb-4">
+      <div id="board" class="board"></div>
+    </section>
+
+    <div class="text-center">
+      <small class="text-muted">Diseñado para pantallas táctiles y ratón.</small>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-3 mt-4">
+    &copy; 2025 Recursos By Ealvire
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
