@@ -26,31 +26,32 @@ document.addEventListener("DOMContentLoaded", () => {
        Añade o modifica aquí si quieres más unidades. */
     const wordBank = [
         { word: "Betún", tipo: "Sustantivo", acento: "Aguda" },
-        { word: "rápido", tipo: "Adjetivo", acento: "Esdrújula" }, // (aunque 'rápido' es esdrújula? actually 'rápido' is llana; but we keep examples) 
+        { word: "rápido", tipo: "Adjetivo", acento: "Esdrújula" },
         { word: "cantar", tipo: "Verbo", acento: "Aguda" },
-        { word: "árbol", tipo: "Sustantivo", acento: "Llano" },
+        { word: "árbol", tipo: "Sustantivo", acento: "Llana" },
         { word: "música", tipo: "Sustantivo", acento: "Esdrújula" },
         { word: "lógica", tipo: "Adjetivo", acento: "Esdrújula" },
-        { word: "fácil", tipo: "Adjetivo", acento: "Aguda" },
-        { word: "corre", tipo: "Verbo", acento: "Llano" },
+        { word: "fácil", tipo: "Adjetivo", acento: "Llana" },  // ✅ corregido
+        { word: "corre", tipo: "Verbo", acento: "Llana" },
         { word: "árabe", tipo: "Adjetivo", acento: "Esdrújula" },
         { word: "camión", tipo: "Sustantivo", acento: "Aguda" },
-        { word: "cantar", tipo: "Verbo", acento: "Esdrújula" },
         { word: "árbitro", tipo: "Sustantivo", acento: "Esdrújula" },
         { word: "perro", tipo: "Sustantivo", acento: "Llana" },
-        { word: "dulce", tipo: "Adjetivo", acento: "Llano" },
+        { word: "dulce", tipo: "Adjetivo", acento: "Llana" },
         { word: "comió", tipo: "Verbo", acento: "Aguda" },
-        { word: "estudiante", tipo: "Sustantivo", acento: "Llano" },
+        { word: "estudiante", tipo: "Sustantivo", acento: "Llana" },
         { word: "árido", tipo: "Adjetivo", acento: "Esdrújula" },
         { word: "escándalo", tipo: "Sustantivo", acento: "Esdrújula" },
-        { word: "este", tipo: "Determinante", acento: "Llano" },
-        { word: "aquél", tipo: "Determinante", acento: "Aguda" },
-        { word: "mi", tipo: "Determinante", acento: "Aguda" },
-        { word: "nuestra", tipo: "Determinante", acento: "Llano" },
-        { word: "sexto", tipo: "Determinante", acento: "Llano" },
-        { word: "cuatro", tipo: "Determinante", acento: "Llano" },
 
+        // Determinantes corregidos
+        { word: "este", tipo: "Determinante", acento: "Llana" },
+        { word: "aquel", tipo: "Determinante", acento: "Aguda" }, // ✅ sin tilde
+        { word: "mi", tipo: "Determinante", acento: "Aguda" },
+        { word: "nuestra", tipo: "Determinante", acento: "Llana" },
+        { word: "sexto", tipo: "Determinante", acento: "Llana" },
+        { word: "cuatro", tipo: "Determinante", acento: "Llana" }
     ];
+
 
     /* ---------- utilidades ---------- */
     function shuffle(arr) {
@@ -252,26 +253,42 @@ document.addEventListener("DOMContentLoaded", () => {
         let esPareja = false;
 
         if (modo === "romanos") {
-            // ROMANOS -> sigue igual, por ID
+            // ✅ Romanos: sigue igual
             esPareja = (id1 === id2);
-        } else {
-            // PALABRAS -> emparejar si tienen misma clase y acento
-            const obj1 = cards[firstCard.dataset.index].meta;
-            const obj2 = cards[secondCard.dataset.index].meta;
+        }
 
-            if (obj1 && obj2) {
-                const mismaClase = obj1.tipo === obj2.tipo;
-                const mismoAcento = obj1.acento === obj2.acento;
+        else if (modo === "acentuacion") {
+            const carta1 = cards[firstCard.dataset.index];
+            const carta2 = cards[secondCard.dataset.index];
 
-                // evitar que se emparejen dos cartas idénticas del mismo tipo (word+word o label+label)
-                const tipo1 = cards[firstCard.dataset.index].type;
-                const tipo2 = cards[secondCard.dataset.index].type;
+            const ac1 = (carta1.meta + "").toLowerCase().trim();
+            const ac2 = (carta2.meta + "").toLowerCase().trim();
 
-                if (mismaClase && mismoAcento && tipo1 !== tipo2) {
-                    esPareja = true;
-                }
+            const tipo1 = carta1.type;
+            const tipo2 = carta2.type;
+
+            // ✅ Pareja = mismo acento + una palabra y una etiqueta
+            if (ac1 === ac2 && tipo1 !== tipo2) {
+                esPareja = true;
             }
         }
+
+        else if (modo === "tipo") {
+            const carta1 = cards[firstCard.dataset.index];
+            const carta2 = cards[secondCard.dataset.index];
+
+            const t1 = (carta1.meta + "").toLowerCase().trim();
+            const t2 = (carta2.meta + "").toLowerCase().trim();
+
+            const tipo1 = carta1.type;
+            const tipo2 = carta2.type;
+
+            // ✅ Pareja = mismo tipo de palabra + una palabra y una etiqueta
+            if (t1 === t2 && tipo1 !== tipo2) {
+                esPareja = true;
+            }
+        }
+
 
         // ----------------------------
         if (esPareja) {
