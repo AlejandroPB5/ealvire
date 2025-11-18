@@ -448,3 +448,29 @@ function onMouseMovePlaced(e) { movePlacedShip(e.clientX, e.clientY); }
 function onTouchMovePlaced(e) { e.preventDefault(); const touch = e.changedTouches[0]; movePlacedShip(touch.clientX, touch.clientY); }
 function onMouseUpPlaced(e) { endPlacedShipDrag(e.clientX, e.clientY); }
 function onTouchEndPlaced(e) { const touch = e.changedTouches[0]; endPlacedShipDrag(touch.clientX, touch.clientY); }
+
+/* ----------------- BOTÓN NUEVA PARTIDA ----------------- */
+const newGameButton = document.createElement("button");
+newGameButton.textContent = "Nueva Partida";
+newGameButton.className = "btn btn-primary mt-3";
+newGameButton.style.display = "block";
+newGameButton.style.margin = "20px auto";
+document.querySelector("main.container").appendChild(newGameButton);
+
+newGameButton.addEventListener("click", () => {
+  // Reiniciar estado
+  playerGrid = createEmptyGrid();
+  shipElements = [];
+  shipCounter = 0;
+  selectedShipId = null;
+  draggingEl = null;
+  draggingPlacedShip = null;
+  positionsConfirmed = false;
+
+  // Limpiar tableros
+  createBoardHTML(playerBoard);
+  createBoardHTML(enemyBoard, onEnemyClick);
+
+  // Restaurar pool de barcos
+  createPlayerShipsInPool();
+});
