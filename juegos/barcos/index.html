@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Hundir la Flota</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fredoka+One&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="icon" href="../../assets/img/elvire.jpg" type="image/x-icon">
+</head>
+<body>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fs-3 fw-bold" href="../../index.html">📚 Recursos By Ealvire</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#genially">Zona Genially</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../../index.html#juegos">Zona Juegos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#herramientas">Herramientas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../recursos/ciclos.html">Recursos por Ciclo</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../descargas/index.html">Descargas</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+   <header class="school-header text-center text-white py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Hundir la Flota</h1>
+            <p class="lead">Arrastra los barcos a tu tablero y dispara para hundir los barcos del oponente</p>
+           
+        </div>
+    </header>
+<main class="container text-center mt-4">
+
+    <!-- NUEVO: CONTENEDOR DE BARCOS -->
+   <div class="board-section">
+  <h2>Barcos</h2>
+  <div id="ship-pool" class="ship-pool"></div>
+</div>
+
+    <div id="game-container">
+        <div class="board-section">
+            <h2>Tu tablero</h2>
+            <div id="player-board" class="board"></div>
+            <div class="board-buttons mt-3">
+    <button id="rotate-btn" class="btn btn-warning me-2">Rotar barcos</button>
+    <button id="confirm-btn" class="btn btn-success">Confirmar posiciones</button>
+</div>
+
+        </div>
+
+        <div class="board-section">
+            <h2>Tablero enemigo</h2>
+            <div id="enemy-board" class="board"></div>
+            <p class="info">Haz clic para disparar</p>
+        </div>
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

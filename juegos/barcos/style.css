@@ -1,0 +1,172 @@
+/* ----------------- ESTILOS GENERALES ----------------- */
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f3;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.board-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info {
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+}
+
+/* ----------------- CONTENEDOR DE BARCOS ----------------- */
+#ship-pool {
+    background: #ffffff;
+    border: 2px solid #0d6efd;
+    padding: 15px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ----------------- BARCOS EN POOL ----------------- */
+.ship-pool-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
+    cursor: grab;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0e1663, #1e3c72);
+    color: white;
+    font-weight: bold;
+    font-size: 0.85rem;
+    line-height: 32px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    user-select: none;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ship-pool-item i {
+    margin-right: 4px;
+    font-size: 1rem;
+}
+
+/* Animación al arrastrar */
+.ship-pool-item:active {
+    cursor: grabbing;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    transform: scale(1.05);
+}
+
+/* ----------------- TABLEROS ----------------- */
+.board {
+    width: 320px;
+    height: 320px;
+    display: grid;
+    grid-template-columns: repeat(10, 32px);
+    grid-template-rows: repeat(10, 32px);
+    border: 2px solid #222;
+    background: white;
+    position: relative;
+}
+
+.cell {
+    border: 1px solid #ccc;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* ----------------- BARCOS COLOCADOS ----------------- */
+.cell.ship {
+    background: linear-gradient(135deg, #0e1663, #1e3c72);
+    border-radius: 6px;
+    box-shadow: inset 0 2px 5px rgba(255,255,255,0.3);
+    transition: transform 0.2s, background 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.cell.ship i {
+    font-size: 1rem;
+    margin-right: 2px;
+}
+
+.cell.ship:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* ----------------- TOOLTIP PARA NOMBRES ----------------- */
+.cell.ship::after {
+    content: attr(data-ship-name);
+    position: absolute;
+    font-size: 0.7rem;
+    color: white;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background: rgba(0,0,0,0.6);
+    padding: 2px 4px;
+    border-radius: 4px;
+    display: none;
+    pointer-events: none;
+}
+
+.cell.ship:hover::after {
+    display: block;
+}
+
+/* ----------------- HIT / MISS ----------------- */
+.cell.hit {
+    background: #ff4c4c !important;
+    animation: hitAnimation 0.3s ease;
+}
+
+.cell.miss {
+    background: #87cefa !important;
+    animation: missAnimation 0.3s ease;
+}
+
+/* Animaciones suaves */
+@keyframes hitAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes missAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* ----------------- DRAGGING ----------------- */
+.dragging {
+    opacity: 0.7;
+    transform: scale(1.05);
+    z-index: 9999;
+}
+
+/* ----------------- ROTACIÓN ----------------- */
+.ship-rotated {
+    transform: rotate(90deg);
+    transition: transform 0.2s;
+}
