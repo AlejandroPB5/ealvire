@@ -1,7 +1,11 @@
 /* ----------------- ESTILOS GENERALES ----------------- */
 body {
     font-family: Arial, sans-serif;
-    background: #eef2f3;
+    background-image: url('../../assets/img/fondomar.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background: #eef2f3; */
     text-align: center;
     margin: 0;
     padding: 0;
@@ -22,8 +26,12 @@ body {
 
 .info {
     font-size: 14px;
-    color: #555;
+    color: #ffffff;
     margin-top: 8px;
+    background-color: #0e1663;
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin-top: 16px;
 }
 
 /* ----------------- CONTENEDOR DE BARCOS ----------------- */
@@ -72,11 +80,11 @@ body {
 
 /* ----------------- TABLEROS ----------------- */
 .board {
-    width: 320px;
-    height: 320px;
+    width: 400px;
+    height: 400px;
     display: grid;
-    grid-template-columns: repeat(10, 32px);
-    grid-template-rows: repeat(10, 32px);
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
     border: 2px solid #222;
     background: white;
     position: relative;
@@ -84,11 +92,12 @@ body {
 
 .cell {
     border: 1px solid #ccc;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     position: relative;
     box-sizing: border-box;
 }
+
 
 /* ----------------- BARCOS COLOCADOS ----------------- */
 .cell.ship {
