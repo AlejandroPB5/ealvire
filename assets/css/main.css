@@ -134,6 +134,12 @@ html {
   transform: translateY(-6px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
+.logoElvire{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
 
 
 

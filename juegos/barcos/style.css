@@ -1,7 +1,7 @@
 /* ----------------- ESTILOS GENERALES ----------------- */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('../../assets/img/fondomar.jpg');
+    background-image: url('../../assets/img/fondomar.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -9,6 +9,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    color: #ffffff;
 }
 
 #game-container {
@@ -80,11 +81,11 @@ body {
 
 /* ----------------- TABLEROS ----------------- */
 .board {
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 320px;
     display: grid;
-    grid-template-columns: repeat(10, 40px);
-    grid-template-rows: repeat(10, 40px);
+    grid-template-columns: repeat(10, 32px);
+    grid-template-rows: repeat(10, 32px);
     border: 2px solid #222;
     background: white;
     position: relative;
@@ -92,8 +93,8 @@ body {
 
 .cell {
     border: 1px solid #ccc;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     position: relative;
     box-sizing: border-box;
 }
