@@ -9,24 +9,16 @@ let touchClone = null;
 // Banco de palabras
 const wordBank = {
   sustantivo: [
-    'niño', 'casa', 'flor', 'perro', 'libro', 'montaña',
-    'ciudad', 'escuela', 'río', 'árbol', 'ordenador', 'mar',
-    'sol', 'mesa', 'pelota', 'ratón', 'amigo', 'camino'
+    'Piragüista', 'Biblioteca', 'Girasol', 'Telescopio', 'Ajedrez', 'Farola', 'Escalera', 'Mochila', 'Campanario', 'Erupción', 'Melancolía', 'Jauría', 'Abundancia', 'Ruido', 'Honradez', 'Bandada', 'Paciencia', 'Equipaje', 'Infancia', 'Justicia', 'Caimán', 'Cicatriz', 'Cúmulo', 'Niebla', 'Terremoto', 'Libélula', 'Acuario', 'Dromedario', 'Oxígeno', 'Hormiguero', 'camino', 'Semáforo', 'Columpio', 'Gorrión', 'Ventana', 'Linterna', 'Volcán', 'Abeja', 'Barco', 'Guitarra', 'Alfombra'
   ],
   adjetivo: [
-    'bonito', 'rápido', 'feliz', 'alto', 'frío', 'dulce',
-    'valiente', 'pequeño', 'inteligente', 'amable', 'nuevo', 'viejo',
-    'tranquilo', 'ruidoso', 'simpático', 'divertido', 'brillante', 'fuerte'
+    'Rápido', 'Feliz', 'Alto', 'Frío', 'Dulce', 'Valiente', 'Inteligente', 'Amable', 'Viejo', 'Tranquilo', 'Ruidoso', 'Brillante', 'Fuerte', 'Luminoso', 'Acuático', 'Minúsculo', 'Transparente', 'Antiguo', 'Silvestre', 'Enorme', 'Cálido', 'Elegante', 'Púrpura', 'Monótono', 'Absurdo', 'Profundo', 'Sedoso', 'Crujiente', 'Asustadizo', 'Agradable', 'Sabroso', 'Curioso', 'Antipático', 'Sincero', 'Montañoso', 'Redondo', 'Suave', 'Mojado', 'Seco', 'Delicioso', 'Peludo', 'Triste', 'Cansado', 'Famoso', 'Especial', 'Cómodo'
   ],
   verbo: [
-    'correr', 'saltar', 'leer', 'comer', 'dormir', 'escribir',
-    'pintar', 'nadar', 'hablar', 'caminar', 'bailar', 'viajar',
-    'escuchar', 'reír', 'jugar', 'enseñar', 'aprender', 'dibujar'
+    'Susurraron', 'Florezca', 'Revolotean', 'Esquivaste', 'Imaginaré', 'Buceamos', 'Ocurrió', 'Debatirán', 'Agradeciera', 'Surgió', 'Investiga', 'Traducís', 'Compondrán', 'Atravesamos', 'Distribuya', 'Percibí', 'Viajasteis', 'Explicamos', 'Dibujan', 'Permanecimos', 'Descubrirías', 'Alcanzó', 'Prometen', 'Conducía', 'Suponga', 'Crecieron', 'Intercambia', 'Reflexionamos', 'Destacará', 'Brillará', 'Anunciaron', 'Desapareció', 'Enfrentamos', 'Despertaría', 'Sostenemos', 'Pintaste'
   ],
   determinante: [
-    'el', 'la', 'los', 'las', 'un', 'una',
-    'este', 'aquellos', 'tu', 'vuestro',
-    'muchas', 'algunos', 'siete', 'quinto', 'ocho', 'sexto'
+    'el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas', 'este', 'esta', 'estos', 'estas', 'ese', 'esa', 'esos', 'esas', 'aquel', 'aquella', 'aquellos', 'aquellas', 'mi', 'tu', 'su', 'nuestro', 'nuestra', 'vuestro', 'vuestra', 'mía', 'tuya', 'suya', 'dos', 'quince', 'mil', 'primer', 'tercera', 'último', 'algún', 'ningún', 'todo', 'toda', 'varios', 'otras', 'bastante', 'cada', 'sexto'
   ]
 };
 
