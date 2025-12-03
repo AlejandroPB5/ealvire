@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>¿Quién es Quién? | Recursos By Ealvire</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fredoka+One&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="icon" href="../../assets/img/elvire.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fs-3 fw-bold" href="../../index.html"><img class="logoElvire"
+                    src="../../assets/img/elvire.jpg" alt="" srcset=""> Recursos By Ealvire</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#genially">Zona Genially</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../../index.html#juegos">Zona Juegos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index.html#herramientas">Herramientas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../recursos/ciclos.html">Recursos por Ciclo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../descargas/index.html">Descargas</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cabecera -->
+    <header class="school-header text-center text-white py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">❓ ¿Quién es Quién?</h1>
+            <p class="lead">Descubre la palabra secreta haciendo preguntas</p>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="game-container">
+        <div class="boards-wrapper">
+            <div class="board-container red-board">
+                <h3 class="board-title">Tablero Rojo</h3>
+                <div class="board-grid" id="redBoard"></div>
+            </div>
+
+            <div class="board-container blue-board">
+                <h3 class="board-title">Tablero Azul</h3>
+                <div class="board-grid" id="blueBoard"></div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="resetBtn">Reiniciar Juego</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3 mt-5">
+        <small>© 2025 Recursos By Ealvire</small>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
