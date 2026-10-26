@@ -184,23 +184,63 @@
     $("feedback").className = "feedback";
   });
 
-  $("checkBtn").addEventListener("click", () => {
-    if (picked === null) {
-      $("feedback").textContent = "Primero elige un número del panel.";
-      $("feedback").className = "feedback bad";
-      return;
-    }
-    if (picked === target) {
-      score++;
-      $("feedback").textContent = "¡Muy bien! Has encontrado el número. 🎉";
-      $("feedback").className = "feedback good";
-    } else {
-      $("feedback").textContent =
-        `Casi… has elegido ${picked}. Busca el ${target}.`;
-      $("feedback").className = "feedback bad";
-    }
+
+
+$("checkBtn").addEventListener("click", () => {
+  const seleccionados = [
+    ...grid.querySelectorAll(".num-cell.selected")
+  ].map((el) => Number(el.textContent.trim()));
+
+  if (seleccionados.length === 0) {
+    $("feedback").textContent = "Primero marca los números del panel.";
+    $("feedback").className = "feedback bad";
+    return;
+  }
+
+  const respuestasCorrectas = [
+    target,
+    target - 1,
+    target + 1,
+    target - 10,
+    target + 10,
+    target - 100,
+    target + 100
+  ];
+
+  const correctos = seleccionados.filter(
+    (n) => respuestasCorrectas.includes(n)
+  );
+
+  const incorrectos = seleccionados.filter(
+    (n) => !respuestasCorrectas.includes(n)
+  );
+
+  const faltantes = respuestasCorrectas.filter(
+    (n) => !seleccionados.includes(n)
+  );
+
+  const objetivoEncontrado = seleccionados.includes(target);
+
+  if (objetivoEncontrado) {
+    score++;
     $("score").textContent = score;
-  });
+  }
+
+  if (incorrectos.length === 0 && faltantes.length === 0) {
+    $("feedback").textContent =
+      "¡Perfecto! Has encontrado el objetivo y sus seis vecinos. 🎉";
+    $("feedback").className = "feedback good";
+  } else {
+    $("feedback").textContent =
+      `Correctos: ${correctos.length}/7. ` +
+      `Incorrectos: ${incorrectos.length ? incorrectos.join(", ") : "ninguno"}. ` +
+      `Te faltan: ${faltantes.length ? faltantes.join(", ") : "ninguno"}.`;
+
+    $("feedback").className = "feedback bad";
+  }
+});
+
+
 
   $("solutionBtn").addEventListener("click", () => {
     selectNumber(target);

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
 :root {
   --navy: #1d2942;
   --blue: #2463ff;
@@ -15,7 +15,7 @@ body {
   margin: 0;
   background: #eef3f8;
   color: var(--navy);
-  font-family: "Comic Neue", sans-serif;
+  font-family: "Comic Neue", cursive, sans-serif;
   font-weight: 700;
 }
 button,
@@ -48,12 +48,12 @@ button:hover {
 .eyebrow {
   margin: 0;
   color: #e78300;
-  font-family: Fredoka, sans-serif;
+  font-family: "Comic Neue", cursive, sans-serif;
   font-size: 0.9rem;
 }
 h1 {
   font:
-    700 clamp(1.4rem, 2.6vw, 2.2rem) Fredoka,
+    700 clamp(1.4rem, 2.6vw, 2.2rem) "Comic Neue",
     sans-serif;
   margin: 3px 0;
 }
@@ -64,7 +64,7 @@ h1 {
 .random-btn {
   background: #ff9f0a;
   color: #fff;
-  font-family: Fredoka, sans-serif;
+  font-family: "Comic Neue", cursive, sans-serif;
   font-size: 1rem;
   box-shadow: 0 3px 0 #d77a00;
 }
@@ -92,13 +92,13 @@ h1 {
 }
 .section-heading h2 {
   font:
-    700 1.05rem Fredoka,
+    700 1.05rem "Comic Neue",
     sans-serif;
   margin: 0;
 }
 .section-heading span {
   font:
-    700 0.82rem Fredoka,
+    700 0.82rem "Comic Neue",
     sans-serif;
   color: #df7900;
   text-align: right;
@@ -117,7 +117,7 @@ h1 {
   font-size: 0.95rem;
 }
 .target-strip strong {
-  font-family: Fredoka, sans-serif;
+  font-family: "Comic Neue", cursive, sans-serif;
 }
 .number-grid {
   display: grid;
@@ -188,13 +188,13 @@ h1 {
   display: grid;
   place-items: center;
   font:
-    700 2.3rem Fredoka,
+    700 2.3rem "Comic Neue",
     sans-serif;
   color: #08613c;
 }
 .worksheet h3 {
   font:
-    700 0.98rem Fredoka,
+    700 0.98rem "Comic Neue",
     sans-serif;
   margin: 15px 0 7px;
 }
@@ -302,7 +302,7 @@ input {
 .place-head span {
   text-align: center;
   font:
-    700 1.3rem Fredoka,
+    700 1.3rem "Comic Neue",
     sans-serif;
   padding: 7px;
   border-bottom: 3px solid var(--navy);
@@ -348,7 +348,7 @@ input {
 }
 .blocks-group h4 {
   font:
-    700 0.75rem Fredoka,
+    700 0.75rem "Comic Neue",
     sans-serif;
   margin: 0 0 8px;
 }
@@ -538,7 +538,7 @@ footer {
 body {
   background: #fff9ed;
   color: #34416b;
-  font-family: "Comic Neue", sans-serif;
+  font-family: "Comic Neue", cursive, sans-serif;
 }
 
 /* Cabecera del juego */
@@ -550,13 +550,13 @@ body {
 
 .eyebrow {
   color: #e58b28;
-  font-family: "Fredoka", sans-serif;
+  font-family: "Comic Neue", cursive, sans-serif;
   font-weight: 700;
 }
 
 h1 {
   color: #6570c8;
-  font-family: "Fredoka", sans-serif;
+  font-family: "Comic Neue", cursive, sans-serif;
 }
 
 .subtitle {
@@ -605,7 +605,7 @@ button:hover {
 .section-heading h2,
 .worksheet h3 {
   color: #5d68bd;
-  font-family: "Fredoka", sans-serif;
+  font-family: "Comic Neue", cursive, sans-serif;
 }
 
 .section-heading {
@@ -717,8 +717,6 @@ footer {
    RECURSOS BY ELVIRE - JUEGO DE CENTENAS
    ========================================= */
 
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap");
-
 body {
   background: #eec9da;
   font-family: "Comic Neue", cursive, sans-serif;
@@ -734,14 +732,14 @@ body {
 }
 
 .topbar h1 {
-  font-family: "Fredoka One", cursive;
+  font-family: "Comic Neue", cursive;
   color: white;
   text-shadow: 2px 2px #d75d7a;
 }
 
 .topbar .eyebrow {
   color: white;
-  font-family: "Fredoka One", cursive;
+  font-family: "Comic Neue", cursive;
 }
 
 .topbar .subtitle {
@@ -755,7 +753,7 @@ body {
   border-radius: 12px;
   border: 2px solid white;
   box-shadow: 0 4px 0 #72d88a;
-  font-family: "Fredoka One", cursive;
+  font-family: "Comic Neue", cursive;
 }
 
 /* Tarjetas principales */
@@ -769,7 +767,7 @@ body {
 /* Títulos */
 .section-heading h2,
 .worksheet h3 {
-  font-family: "Fredoka One", cursive;
+  font-family: "Comic Neue", cursive;
   color: #d75d7a;
 }
 
@@ -879,7 +877,7 @@ footer {
   background: #fc8297;
   color: white;
   margin-top: 12px;
-  font-family: "Fredoka One", cursive;
+  font-family: "Comic Neue", cursive;
 }
 
 /* Adaptación a móviles */
