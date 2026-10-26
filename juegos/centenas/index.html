@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El panel de las centenas | Recursos By Elvire</title>
+  <link rel="stylesheet" href="css/centenas.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">¡Aprende y juega!</p>
+      <h1>CazaCentenas</h1>
+      <p class="subtitle">Practica centenas, decenas y unidades</p>
+    </div>
+    <button id="randomBtn" class="random-btn">🎲 Generar número aleatorio</button>
+  </header>
+
+  <main class="layout">
+    <section class="panel card">
+      <div class="section-heading">
+        <h2>▦ PANEL NUMÉRICO (0–999)</h2>
+        <span>TOCA O ARRASTRA</span>
+      </div>
+      <div class="target-strip">
+        <strong id="instruction">Busca el número indicado</strong>
+        <span>Elegido: <b id="pickedNumber">—</b></span>
+      </div>
+      <div id="numberGrid" class="number-grid" aria-label="Panel numérico"></div>
+      <div class="actions">
+        <button id="clearBtn" class="secondary">Borrar</button>
+        <button id="solutionBtn" class="secondary">Solución</button>
+        <button id="checkBtn" class="check-btn">✓ Comprobar</button>
+      </div>
+      <p id="feedback" class="feedback" aria-live="polite">Pulsa «Generar número aleatorio» para empezar.</p>
+    </section>
+
+    <section class="worksheet card">
+      <div class="number-oval"><span id="targetNumber">347</span></div>
+      <h3>↔ 1. COMPLETA LA RECTA GRADUADA</h3>
+      <div class="number-line-wrap">
+        <div class="number-line" id="numberLine">
+          <span class="arrow left">◆</span><span class="arrow right">◆</span>
+          <div class="tick-row" id="ticks"></div>
+        </div>
+        <div class="line-inputs">
+          <label><input id="minus100" inputmode="numeric" placeholder="−100"><small>−100</small></label>
+          <label><input id="minus10" inputmode="numeric" placeholder="−10"><small>−10</small></label>
+          <label><input id="minus1" inputmode="numeric" placeholder="−1"><small>−1</small></label>
+          <label><input id="plus1" inputmode="numeric" placeholder="+1"><small>+1</small></label>
+          <label><input id="plus10" inputmode="numeric" placeholder="+10"><small>+10</small></label>
+          <label><input id="plus100" inputmode="numeric" placeholder="+100"><small>+100</small></label>
+        </div>
+      </div>
+
+      <h3>▦ 2. COMPLETA LA TABLA Y RODEA LOS BLOQUES</h3>
+      <div class="place-value-layout">
+        <div class="place-table">
+          <div class="place-head"><span>C</span><span>D</span><span>U</span></div>
+          <div class="place-values">
+            <input id="hundreds" aria-label="Centenas" inputmode="numeric" maxlength="1">
+            <input id="tens" aria-label="Decenas" inputmode="numeric" maxlength="1">
+            <input id="units" aria-label="Unidades" inputmode="numeric" maxlength="1">
+          </div>
+          <p class="hint">C = centenas · D = decenas · U = unidades</p>
+        </div>
+        <div class="blocks-area">
+          <div class="blocks-group">
+            <h4>CENTENAS (100)</h4>
+            <div id="hundredBlocks" class="hundred-blocks"></div>
+          </div>
+          <div class="blocks-group">
+            <h4>DECENAS (10)</h4>
+            <div id="tenBlocks" class="ten-blocks"></div>
+          </div>
+          <div class="blocks-group">
+            <h4>UNIDADES (1)</h4>
+            <div id="unitBlocks" class="unit-blocks"></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>3. DESCOMPÓN</h3>
+      <div class="decompose">
+        <input id="decompHundreds" inputmode="numeric" placeholder="Centenas">
+        <span>+</span>
+        <input id="decompTens" inputmode="numeric" placeholder="Decenas">
+        <span>+</span>
+        <input id="decompUnits" inputmode="numeric" placeholder="Unidades">
+        <span>=</span>
+        <input id="decompTotal" inputmode="numeric" placeholder="Número">
+      </div>
+      <div class="worksheet-actions">
+        <button id="checkWorksheet" class="check-btn">✓ Comprobar ficha</button>
+        <button id="showWorksheetSolution" class="secondary">Ver solución</button>
+      </div>
+      <p id="worksheetFeedback" class="feedback" aria-live="polite"></p>
+      <div class="score-row"><span>⭐ Aciertos: <b id="score">0</b></span><span>Intentos: <b id="attempts">0</b></span></div>
+    </section>
+  </main>
+  <footer>By Elvire</footer>
+  <script src="js/centenas.js"></script>
+</body>
+</html>

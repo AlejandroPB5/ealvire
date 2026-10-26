@@ -1,0 +1,916 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;500;600;700&display=swap");
+:root {
+  --navy: #1d2942;
+  --blue: #2463ff;
+  --pale: #f5f8fc;
+  --border: #cbd7e6;
+  --orange: #f59e0b;
+  --green: #159947;
+  --red: #e33445;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #eef3f8;
+  color: var(--navy);
+  font-family: "Comic Neue", sans-serif;
+  font-weight: 700;
+}
+button,
+input {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 12px;
+  padding: 11px 16px;
+  font-weight: 700;
+  transition:
+    transform 0.12s,
+    filter 0.12s;
+}
+button:hover {
+  filter: brightness(0.97);
+  transform: translateY(-1px);
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px clamp(16px, 3vw, 42px);
+  background: white;
+  border-bottom: 3px solid #dce5f0;
+}
+.eyebrow {
+  margin: 0;
+  color: #e78300;
+  font-family: Fredoka, sans-serif;
+  font-size: 0.9rem;
+}
+h1 {
+  font:
+    700 clamp(1.4rem, 2.6vw, 2.2rem) Fredoka,
+    sans-serif;
+  margin: 3px 0;
+}
+.subtitle {
+  margin: 0;
+  color: #62718a;
+}
+.random-btn {
+  background: #ff9f0a;
+  color: #fff;
+  font-family: Fredoka, sans-serif;
+  font-size: 1rem;
+  box-shadow: 0 3px 0 #d77a00;
+}
+.layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(420px, 1.45fr);
+  gap: 14px;
+  padding: 14px;
+  align-items: start;
+}
+.card {
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: 22px;
+  padding: 14px;
+  min-width: 0;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #e5ebf2;
+  padding-bottom: 10px;
+}
+.section-heading h2 {
+  font:
+    700 1.05rem Fredoka,
+    sans-serif;
+  margin: 0;
+}
+.section-heading span {
+  font:
+    700 0.82rem Fredoka,
+    sans-serif;
+  color: #df7900;
+  text-align: right;
+}
+.target-strip {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  background: #f7f9fc;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+  margin: 12px auto;
+  width: 88%;
+  font-size: 0.95rem;
+}
+.target-strip strong {
+  font-family: Fredoka, sans-serif;
+}
+.number-grid {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 4px;
+  padding: 7px;
+  border: 3px solid var(--navy);
+  border-radius: 18px;
+  max-height: 590px;
+  overflow: auto;
+}
+.num-cell {
+  min-width: 0;
+  aspect-ratio: 1.12;
+  background: #fff;
+  border: 1px solid #e4e9ef;
+  border-radius: 5px;
+  color: #34445e;
+  font-size: clamp(0.6rem, 1vw, 0.95rem);
+  padding: 0;
+}
+.num-cell:hover {
+  background: #fff0c7;
+}
+.num-cell.selected {
+  background: #ffd783;
+  border: 2px solid #f59e0b;
+  color: #814600;
+  box-shadow: inset 0 0 0 1px #f59e0b;
+}
+
+.actions,
+.worksheet-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0 4px;
+}
+.secondary {
+  background: #fff;
+  border: 2px solid var(--border);
+  color: #14213a;
+}
+.check-btn {
+  background: var(--green);
+  color: white;
+  box-shadow: 0 3px 0 #087333;
+}
+.feedback {
+  min-height: 22px;
+  margin: 9px 3px 0;
+  text-align: center;
+  color: #465570;
+}
+.feedback.good {
+  color: #12803a;
+}
+.feedback.bad {
+  color: #c52334;
+}
+.number-oval {
+  margin: 0 auto 12px;
+  border: 3px solid var(--navy);
+  border-radius: 50%;
+  width: 160px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  font:
+    700 2.3rem Fredoka,
+    sans-serif;
+  color: #08613c;
+}
+.worksheet h3 {
+  font:
+    700 0.98rem Fredoka,
+    sans-serif;
+  margin: 15px 0 7px;
+}
+.number-line-wrap {
+  background: #f7f9fc;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 15px 8px;
+}
+.number-line {
+  height: 36px;
+  position: relative;
+  border-top: 6px solid var(--navy);
+  margin: 22px 25px 0;
+}
+.arrow {
+  position: absolute;
+  top: -17px;
+  font-size: 18px;
+  color: var(--navy);
+}
+.arrow.left {
+  left: -2px;
+}
+.arrow.right {
+  right: -2px;
+}
+.tick-row {
+  position: absolute;
+  inset: -17px 5% auto;
+  height: 34px;
+  display: flex;
+  justify-content: space-between;
+}
+.tick {
+  height: 32px;
+  width: 3px;
+  background: #64748b;
+  position: relative;
+}
+.tick.major {
+  height: 36px;
+  background: #f97316;
+}
+.tick.center {
+  background: #df2637;
+  height: 39px;
+}
+.tick-label {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: #e33445;
+  white-space: nowrap;
+}
+.line-inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.line-inputs label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 55px;
+  flex: 1;
+}
+input {
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 8px;
+  min-width: 0;
+  text-align: center;
+  color: var(--navy);
+  background: white;
+}
+.line-inputs input {
+  width: 100%;
+  max-width: 82px;
+}
+.line-inputs small {
+  font-size: 0.8rem;
+}
+.place-value-layout {
+  display: grid;
+  grid-template-columns: minmax(135px, 0.55fr) minmax(0, 2fr);
+  gap: 10px;
+}
+.place-table {
+  border: 2px solid var(--border);
+  border-radius: 15px;
+  overflow: hidden;
+  align-self: start;
+}
+.place-head,
+.place-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.place-head span {
+  text-align: center;
+  font:
+    700 1.3rem Fredoka,
+    sans-serif;
+  padding: 7px;
+  border-bottom: 3px solid var(--navy);
+}
+.place-head span:first-child {
+  color: #15803d;
+}
+.place-head span:nth-child(2) {
+  color: #dc2626;
+}
+.place-head span:last-child {
+  color: #2563eb;
+}
+.place-head span + span,
+.place-values input + input {
+  border-left: 2px solid var(--navy);
+  border-radius: 0;
+}
+.place-values input {
+  width: 100%;
+  height: 54px;
+  border: 0;
+  border-radius: 0;
+  font-size: 1.4rem;
+}
+.hint {
+  font-size: 0.72rem;
+  text-align: center;
+  padding: 0 5px;
+  color: #63718a;
+}
+.blocks-area {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 7px;
+  min-width: 0;
+}
+.blocks-group {
+  border: 2px dashed var(--border);
+  padding: 7px;
+  border-radius: 7px;
+  min-width: 0;
+}
+.blocks-group h4 {
+  font:
+    700 0.75rem Fredoka,
+    sans-serif;
+  margin: 0 0 8px;
+}
+.hundred-blocks,
+.ten-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  align-items: start;
+  gap: 8px;
+}
+.block {
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 6px;
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+.block:focus {
+  outline: 3px solid #f59e0b;
+}
+.block.chosen {
+  box-shadow: 0 0 0 3px #f59e0b;
+  transform: scale(0.96);
+}
+
+/* CENTENAS: cuadrados verdes grandes */
+.block.hundred {
+  width: 48px;
+  height: 48px;
+  background: #86efac;
+  border: 2px solid #15803d;
+  border-radius: 5px;
+}
+
+/* DECENAS: palitos rojos verticales */
+.block.ten {
+  box-sizing: border-box;
+  width: 23px;
+  min-width: 5px;
+  height: 80px;
+  padding: 0;
+  background: #fca5a5;
+  border: 1px solid #dc2626;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* UNIDADES: cuadrados azules pequeños */
+
+/* UNIDADES: cuadraditos azules pequeños */
+.block.unit {
+  box-sizing: border-box;
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  padding: 0;
+  background: #93c5fd;
+  border: 1px solid #2563eb;
+  border-radius: 2px;
+  flex-shrink: 0;
+  justify-self: center;
+}
+
+.unit-blocks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(28px, 1fr));
+  justify-items: center;
+  gap: 10px;
+}
+.decompose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: #f7f9fc;
+  border-radius: 14px;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+.decompose input {
+  width: 75px;
+  height: 46px;
+  font-size: 1rem;
+}
+.decompose input:last-child {
+  width: 90px;
+}
+.decompose span {
+  font-size: 1.3rem;
+}
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 3px 0;
+  color: #596980;
+}
+footer {
+  text-align: center;
+  padding: 12px;
+  color: #687891;
+  font-size: 0.9rem;
+}
+@media (max-width: 1050px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .number-grid {
+    max-height: 430px;
+  }
+  .num-cell {
+    font-size: clamp(0.7rem, 1.7vw, 1rem);
+  }
+}
+@media (max-width: 600px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .random-btn {
+    width: 100%;
+  }
+  .layout {
+    padding: 8px;
+  }
+  .card {
+    padding: 10px;
+  }
+  .place-value-layout {
+    grid-template-columns: 1fr;
+  }
+  .place-table {
+    max-width: 260px;
+  }
+  .blocks-area {
+    grid-template-columns: 1fr;
+  }
+  .blocks-group h4 {
+    font-size: 0.85rem;
+  }
+  .hundred-blocks,
+  .ten-blocks {
+    min-height: 30px;
+  }
+  .number-grid {
+    grid-template-columns: repeat(10, minmax(22px, 1fr));
+    gap: 2px;
+    padding: 4px;
+  }
+  .num-cell {
+    font-size: 0.68rem;
+  }
+  .target-strip {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  .line-inputs label {
+    min-width: 27%;
+  }
+  .decompose input {
+    width: 58px;
+  }
+  .number-oval {
+    width: 130px;
+    height: 54px;
+    font-size: 2rem;
+  }
+}
+
+/* =====================================
+   RECURSOS BY ELVIRE
+   Estilo infantil para el juego
+   ===================================== */
+
+:root {
+  --navy: #34416b;
+  --blue: #6579dc;
+  --pale: #fffaf2;
+  --border: #e3dcef;
+  --orange: #ffb547;
+  --green: #239b62;
+  --red: #e34d5b;
+}
+
+/* Fondo general */
+body {
+  background: #fff9ed;
+  color: #34416b;
+  font-family: "Comic Neue", sans-serif;
+}
+
+/* Cabecera del juego */
+.topbar {
+  background: #ffffff;
+  border-bottom: 4px solid #e6ddf5;
+  padding: 22px clamp(16px, 4vw, 48px);
+}
+
+.eyebrow {
+  color: #e58b28;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  color: #6570c8;
+  font-family: "Fredoka", sans-serif;
+}
+
+.subtitle {
+  color: #68728b;
+}
+
+/* Botones principales */
+button {
+  border-radius: 14px;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.random-btn {
+  background: #ffbd59;
+  color: #49351a;
+  box-shadow: 0 4px 0 #e49a32;
+}
+
+.check-btn {
+  background: #35a875;
+  color: white;
+  box-shadow: 0 4px 0 #238354;
+}
+
+.secondary {
+  background: #fff;
+  border: 2px solid #dcd5ed;
+  color: #495580;
+}
+
+/* Tarjetas */
+.card {
+  background: #fff;
+  border: 2px solid #e5def0;
+  border-radius: 22px;
+  box-shadow: 0 5px 14px rgba(70, 66, 120, 0.07);
+}
+
+/* Títulos de las actividades */
+.section-heading h2,
+.worksheet h3 {
+  color: #5d68bd;
+  font-family: "Fredoka", sans-serif;
+}
+
+.section-heading {
+  border-bottom-color: #eee8f6;
+}
+
+/* Número que hay que representar */
+.number-oval {
+  border-color: #a9cdb6;
+  background: #f0fff5;
+  color: #218453;
+}
+
+/* Panel numérico */
+.number-grid {
+  border-color: #8e9bd4;
+  background: #f8f7ff;
+  border-radius: 16px;
+}
+
+.num-cell {
+  background: #fff;
+  border-color: #e6e2f0;
+  color: #455276;
+}
+
+.num-cell:hover {
+  background: #fff0ce;
+}
+
+.num-cell.selected {
+  background: #ffe3a3;
+  border-color: #edaa35;
+}
+
+/* Zonas de ejercicios */
+.target-strip,
+.number-line-wrap,
+.decompose {
+  background: #fbf9ff;
+  border-color: #e2dcef;
+  border-radius: 15px;
+}
+
+/* Tabla de centenas, decenas y unidades */
+.place-table {
+  border-color: #ded8ec;
+}
+
+.place-head span {
+  background: #f6f2ff;
+}
+
+/* Mantener los colores didácticos de los bloques */
+.block.hundred {
+  background: #86efac;
+  border: 2px solid #15803d;
+}
+
+.block.ten {
+  background: #fca5a5;
+  border: 1px solid #dc2626;
+}
+
+.block.unit {
+  background: #93c5fd;
+  border: 1px solid #2563eb;
+}
+
+/* Mensajes de respuesta */
+.feedback {
+  font-weight: 700;
+}
+
+.feedback.good {
+  color: #16834b;
+}
+
+.feedback.bad {
+  color: #d12f48;
+}
+
+/* Contador y pie */
+.score-row {
+  color: #5c6887;
+}
+
+footer {
+  color: #737c96;
+  padding: 20px;
+}
+
+/* Mejor adaptación a pantallas pequeñas */
+@media (max-width: 600px) {
+  .topbar {
+    padding: 18px 14px;
+  }
+
+  .card {
+    border-radius: 17px;
+  }
+
+  .random-btn {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   RECURSOS BY ELVIRE - JUEGO DE CENTENAS
+   ========================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap");
+
+body {
+  background: #eec9da;
+  font-family: "Comic Neue", cursive, sans-serif;
+  color: #34344a;
+}
+
+/* Cabecera */
+.topbar {
+  background: #fc8297;
+  color: white;
+  border-bottom: 4px solid #eec9da;
+  padding: 22px clamp(16px, 3vw, 40px);
+}
+
+.topbar h1 {
+  font-family: "Fredoka One", cursive;
+  color: white;
+  text-shadow: 2px 2px #d75d7a;
+}
+
+.topbar .eyebrow {
+  color: white;
+  font-family: "Fredoka One", cursive;
+}
+
+.topbar .subtitle {
+  color: #fff;
+}
+
+/* Botón de número aleatorio */
+.random-btn {
+  background: #b2fcbe;
+  color: #263c30;
+  border-radius: 12px;
+  border: 2px solid white;
+  box-shadow: 0 4px 0 #72d88a;
+  font-family: "Fredoka One", cursive;
+}
+
+/* Tarjetas principales */
+.card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 2px solid white;
+  border-radius: 20px;
+  box-shadow: 0 5px 14px rgba(110, 67, 93, 0.12);
+}
+
+/* Títulos */
+.section-heading h2,
+.worksheet h3 {
+  font-family: "Fredoka One", cursive;
+  color: #d75d7a;
+}
+
+.section-heading {
+  border-bottom-color: #f4dce7;
+}
+
+.section-heading span {
+  color: #a24e91;
+}
+
+/* Número que hay que representar */
+.number-oval {
+  background: #d9f3fc;
+  border: 3px solid #8bcde5;
+  color: #287b9b;
+}
+
+/* Panel numérico */
+.number-grid {
+  background: #f8f2ff;
+  border-color: #d8b8d4;
+  border-radius: 18px;
+}
+
+.num-cell {
+  background: white;
+  border-color: #eaddec;
+  border-radius: 6px;
+}
+
+.num-cell:hover {
+  background: #fff0c9;
+}
+
+.num-cell.selected {
+  background: #ffe0a3;
+  border-color: #f0a735;
+}
+
+/* Áreas de ejercicios */
+.target-strip,
+.number-line-wrap,
+.decompose {
+  background: #fff8fc;
+  border-color: #ecd7e5;
+  border-radius: 15px;
+}
+
+/* Tabla C-D-U */
+.place-table {
+  border-color: #e4d4e5;
+  border-radius: 12px;
+}
+
+.place-head span {
+  background: #f8e8f1;
+}
+
+/* Botones generales */
+.secondary {
+  background: white;
+  border: 2px solid #e5cddd;
+  color: #8b456d;
+  border-radius: 12px;
+}
+
+.check-btn {
+  background: #b2fcbe;
+  color: #244a32;
+  border-radius: 12px;
+  box-shadow: 0 4px 0 #72d88a;
+}
+
+/* Mantener la identidad de los bloques */
+.block.hundred {
+  background: #86efac;
+  border: 2px solid #15803d;
+}
+
+.block.ten {
+  background: #fca5a5;
+  border: 1px solid #dc2626;
+}
+
+.block.unit {
+  background: #93c5fd;
+  border: 1px solid #2563eb;
+}
+
+/* Mensajes */
+.feedback.good {
+  color: #21834e;
+}
+
+.feedback.bad {
+  color: #d73556;
+}
+
+/* Puntuación */
+.score-row {
+  color: #8b456d;
+}
+
+/* Pie de página */
+footer {
+  background: #fc8297;
+  color: white;
+  margin-top: 12px;
+  font-family: "Fredoka One", cursive;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 600px) {
+  .topbar {
+    padding: 18px 14px;
+  }
+
+  .topbar h1 {
+    font-size: 1.5rem;
+  }
+
+  .random-btn {
+    width: 100%;
+  }
+
+  .card {
+    border-radius: 16px;
+  }
+}
+
+/* Primer número seleccionado: verde */
+.num-cell.first-selected {
+  background-color: #86efac !important;
+  border: 2px solid #15803d !important;
+  color: #14532d;
+}
+
+/* Los otros seis números: naranja */
+.num-cell.other-selected {
+  background-color: #fed7aa !important;
+  border: 2px solid #ea580c !important;
+  color: #9a3412;
+}
